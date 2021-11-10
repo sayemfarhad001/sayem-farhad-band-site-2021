@@ -1,0 +1,38 @@
+@font-face {
+    font-family: 'AvenirNextLTPro-Regular';
+	src: url('../assets/fonts/AvenirNextLTPro-Regular.otf') format('otf');
+    src: url('../assets/fonts/AvenirNextLTPro.ttf') format('truetype');
+
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+	font-family: 'AvenirNextLTPro-Demi';
+	src: url('../assets/fonts/AvenirNextLTPro-Demi.otf') format('otf');
+    src: url('../assets/fonts/AvenirNextLTProDemi.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'AvenirNextLTPro-Bold';
+	src: url('../assets/fonts/AvenirNextLTPro-Bold.otf') format('otf');
+    src: url('../assets/fonts/AvenirNextLTProBold.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+* {
+    font-family: 'AvenirNextLTPro-Regular', 'AvenirNextLTPro-Demi', 'AvenirNextLTPro-Bold';
+}
+
+@mixin flexColumn () {
+    display: flex;
+    flex-direction: column;
+}
+
+.nav__bar__container {
+    @include flexColumn ();
+}
+

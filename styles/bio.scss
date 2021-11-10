@@ -1,0 +1,31 @@
+@use './partials/global';
+
+body {
+    margin: 0;
+}
+
+.hero__container {
+    background-image: url('../assets/images/hero-bio.jpg');
+    background-position: center;
+    background-size: cover;
+    width: 100vw;
+    height: 60vw;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+#overlay {
+    
+}
+
+.hero__title {
+    color: #ffffff;
+}
+
+.section__gallery-image {
+    width: 100vw;
+}
+
