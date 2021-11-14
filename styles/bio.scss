@@ -12,7 +12,6 @@ body {
     height: 60vw;
 
     display: flex;
-    justify-content: center;
     align-items: center;
 
 }
@@ -23,9 +22,51 @@ body {
 
 .hero__title {
     color: #ffffff;
+    margin-left: 16px;
+    margin-right: 16px;
 }
+
+main {
+    margin-left: 16px;
+    margin-right: 16px;
+}
+
+
+.section__container {
+    
+}
+
+.section__box__image {
+    width: calc( 100% - 16px);
+    // background-image: url("../assets/images/band.jpg");
+    // background-position: center;
+    // background-repeat: no-repeat;
+    // background-size: cover; 
+}
+.section__card__container {
+    @media only screen and (min-width: 768px) {
+     display: flex;
+    }
+}
+
 
 .section__gallery-image {
-    width: 100vw;
+    // width: 100vw;
+    width: calc( 100% - 16px);
+    @media only screen and (min-width: 768px) {
+        width: 31vw;
+        height: auto;  
+        // padding-bottom: 2vw;
+        padding-bottom: 5%;
+        padding-right: 5%;
+    }
 }
 
+
+.section__gallery {
+    @media only screen and (min-width: 768px) {
+        display:flex;
+        flex-wrap: wrap;
+        // justify-content: space-between;
+    }
+}

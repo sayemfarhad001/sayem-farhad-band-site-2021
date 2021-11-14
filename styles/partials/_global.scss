@@ -1,8 +1,8 @@
+// Font activation
 @font-face {
     font-family: 'AvenirNextLTPro-Regular';
 	src: url('../assets/fonts/AvenirNextLTPro-Regular.otf') format('otf');
     src: url('../assets/fonts/AvenirNextLTPro.ttf') format('truetype');
-
     font-weight: normal;
     font-style: normal;
 }
@@ -27,12 +27,123 @@
     font-family: 'AvenirNextLTPro-Regular', 'AvenirNextLTPro-Demi', 'AvenirNextLTPro-Bold';
 }
 
+// Creating mixins
 @mixin flexColumn () {
     display: flex;
     flex-direction: column;
 }
 
-.nav__bar__container {
-    @include flexColumn ();
+@mixin noDecoration () {
+    text-decoration: none;
+    list-style: none;
 }
 
+// Navigation Styles
+.nav__bar__container {
+    @include flexColumn ();
+    background-color: #323232;
+    @media only screen and (min-width: 768px) {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: flex-end;
+    }
+    &__title {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding-top: 24px;
+        padding-bottom: 16px;
+        @media only screen and (min-width: 768px) {
+            align-items: flex-end;
+        }
+        &--link {
+            display: flex;
+            @include noDecoration();
+            color: #ffffff;
+            @media only screen and (min-width: 768px) {
+                display: flex;
+                flex-direction: row;
+                justify-content: flex-start;
+                align-items: flex-end;
+            }
+        }
+    }
+}
+
+.nav__bar {
+    &__list {
+        display: flex;
+        justify-content: space-between;
+        padding-left: 0;
+        margin-bottom: 0;
+        @include noDecoration();
+        &-item {
+            display: flex;
+            justify-content: center;
+            width: 50%;
+            padding-bottom: 10px;
+            &--link {
+                @include noDecoration();
+                color: #afafaf
+            }
+        }
+
+    }
+
+}
+.active {
+    color: #ffffff;
+}
+#active {
+    
+    border-bottom: 2px solid #e1e1e1;
+}
+
+
+
+// Footer style
+.footer {
+    background-color: #323232;
+    color:#ffffff;
+    &__title {
+        padding-left: 16px;
+        padding-right: 16px;
+        &__text {
+        }
+        &__icon {
+            display: flex;
+            &__link {
+                @include noDecoration();
+                color: #ffffff;
+                padding-right: 30px;
+                &__image {
+                    width: 100%;
+                    height: auto;
+                }
+            }
+        }
+    }
+    &__main {
+        padding-left: 16px;
+        padding-right: 16px;
+        &__card {
+            &__text {
+                &--link {
+                    @include noDecoration();
+                    color: #ffffff;               
+                }
+            }
+        }
+    }
+    &__end {
+        padding-left: 16px;
+        padding-right: 16px;
+        &__title {
+            &--link{
+                @include noDecoration();
+                color: #ffffff;
+            }
+        }
+    }
+}

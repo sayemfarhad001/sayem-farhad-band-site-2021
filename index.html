@@ -10,11 +10,11 @@
 <body>
     <header class="header__container">
         <div class="nav__bar__container">
-            <div class="nav__bar__title"><a href="./index.html">BANDSITE</a></div>
+            <div class="nav__bar__container__title"><a class="nav__bar__container__title--link" href="./index.html">BANDSITE</a></div>
             <nav class="nav__bar">
                 <ul class="nav__bar__list">
-                    <li class="nav__bar__list-item"><a id="active" href="./index.html">Biography</a></li>
-                    <li class="nav__bar__list-item"><a href="./pages/shows.html">Shows</a></li>
+                    <li class="nav__bar__list-item" id="active"><a class="nav__bar__list-item--link active" href="./index.html">Biography</a></li>
+                    <li class="nav__bar__list-item"><a class="nav__bar__list-item--link" href="./pages/shows.html">Shows</a></li>
                 </ul>
             </nav>
         </div>
@@ -23,9 +23,11 @@
         </div>
     </header>
     <main>
+        <h1 class="section__title">About the Musicians</h1>
         <div class="section__container">
-            <h1 class="section__title">About the Musicians</h1>
-            <p class="section__image"></p>
+            <p class="section__box"> 
+                <img class="section__box__image" src="./assets/images/band.jpg" alt="band">
+            </p>
             <block>
                 “We push each other to be the best. It’s not uncommon for one of us to say ‘this 
                 needs to be better, back to the drawing board’” 
@@ -57,7 +59,7 @@
         </section>
         <section class="section__container">
             <h1 class="section__title">Photo Gallery</h1>
-            <div class="section__gallery__container"> 
+            <div class="section__gallery"> 
                 <div class="section__gallery-item">
                     <img class="section__gallery-image" src="./assets/images/Photo-gallery-1.jpg" alt="Photo-gallery-1">
                 </div>
@@ -88,23 +90,23 @@
             </div>
         </section>
     </main>
-    <footer>
-        <section class="footer__title__container">
-            <h2 class="footer__title">Get in Touch</h2>
-            <div class="footer__icon__container">
-                <a class="footer__icon--link" href="https://www.instagram.com">
-                    <img class="footer__icon" src="./assets/icons/SVG/Icon-instagram.svg" alt="instagram"/>
+    <footer class="footer">
+        <section class="footer__title">
+            <h2 class="footer__title__text">Get in Touch</h2>
+            <div class="footer__title__icon">
+                <a class="footer__title__icon__link" href="https://www.instagram.com">
+                    <img class="footer__title__icon__link__image" src="./assets/icons/SVG/Icon-instagram.svg" alt="instagram"/>
                 </a>
-                <a class="footer__icon--link" href="https://www.facebook.com/">
-                    <img class="footer__icon" src="./assets/icons/SVG/Icon-facebook.svg" alt="facebook"/>
+                <a class="footer__title__icon__link" href="https://www.facebook.com/">
+                    <img class="footer__title__icon__link__image" src="./assets/icons/SVG/Icon-facebook.svg" alt="facebook"/>
                 </a>
-                <a class="footer__icon--link" href="https://www.twitter.com">
-                    <img class="footer__icon" src="./assets/icons/SVG/Icon-twitter.svg" alt="twitter"/>
+                <a class="footer__title__icon__link" href="https://www.twitter.com">
+                    <img class="footer__title__icon__link__image" src="./assets/icons/SVG/Icon-twitter.svg" alt="twitter"/>
                 </a>
             </div>
-            <p class="footer__end__title top"><a href="/index.html">BANDSITE</a></p>
+            <p class="footer__end__title top"><a class="footer__end__title--link" href="./index.html">BANDSITE</a></p>
         </section>
-        <section class="footer__main__container">
+        <section class="footer__main">
             <div class="footer__main__card">
                 <h3 class="footer__main__card__subtitle">Cam Adams<br>The Bees Knees Management</h3>
                 <p class="footer__main__card__text">503 Broadway Penthouse,<br>New York, NY 10012, USA</p>
@@ -121,8 +123,8 @@
                 <p class="footer__main__card__text"><a class="footer__main__card__text--link" href="mailto:cwhyte@archentertainment.com">cwhyte@archentertainment.com</a></p>
             </div>
         </section>
-        <section class="footer__end__container">
-            <p class="footer__end__title bottom"><a href="/index.html">BANDSITE</a></p>
+        <section class="footer__end">
+            <p class="footer__end__title bottom"><a class="footer__end__title--link" href="./index.html">BANDSITE</a></p>
             <p class="footer__end__text">Copyright The Bees Knees © 2021 All Rights Reserved</p>
         </section>
     </footer>
