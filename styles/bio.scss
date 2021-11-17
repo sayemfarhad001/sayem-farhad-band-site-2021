@@ -2,22 +2,22 @@
 
 body {
     margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .hero__container {
     background-image: url('../assets/images/hero-bio.jpg');
     background-position: center;
     background-size: cover;
-    width: 100vw;
-    height: 60vw;
-
-    display: flex;
-    align-items: center;
-
-}
-
-#overlay {
-    
+    &__overlay {
+        width: 100vw;
+        height: 60vw;  
+        background-color: rgba(50, 50, 50, 0.5);
+        display: flex;
+        align-items: center;
+    }
 }
 
 .hero__title {
@@ -27,44 +27,160 @@ body {
 }
 
 main {
-    margin-left: 16px;
-    margin-right: 16px;
+    // margin-left: 16px;
+    // margin-right: 16px;
 }
 
-
 .section__container {
-    
+    margin-left: 16px;
+    margin-right: 16px;
+    @media (min-width: 768px) {
+        margin-left: 36px;
+        margin-right: 36px;
+    }
+    @media (min-width: 1280px) {
+        padding-left: 36px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+.section__container--background {
+    background-color: #fafafa;
+    padding-left: 16px;
+    // padding-right: 16px;
+    padding-bottom: 16px;
+    @media (min-width: 768px) {
+        padding-left: 36px;
+        // margin-left: 36px;
+        // margin-right: 36px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    @media (min-width: 1280px) {
+        padding-left: 36px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+.section__title {
+    font-family:  'AvenirNextLTPro-Demi';
+    margin-top: 16px;
+    padding-top: 16px;
 }
 
 .section__box__image {
-    width: calc( 100% - 16px);
+    width: 100%;
+    // width: calc( 100% - 16px);
     // background-image: url("../assets/images/band.jpg");
     // background-position: center;
     // background-repeat: no-repeat;
     // background-size: cover; 
 }
-.section__card__container {
-    @media only screen and (min-width: 768px) {
-     display: flex;
+
+.section__block__container {
+    @media (min-width: 768px) {
+        padding-left: 10%;
+        padding-right: 10%;
     }
 }
 
+.section__card__holder {
+    @media (min-width: 768px) {
+        padding-left: 10%;
+        padding-right: 10%;
+        display: flex;
+    }
+    &__card--left {
+        @media (min-width: 768px) {
+            display: flex;
+            // padding-left: 10%;
+            padding-right: 5%;
+        }   
+    }
+    &__card--right {
+        @media (min-width: 768px) {
+            display: flex;
+            padding-left: 1%;
+            padding-right: 5%;
+        }   
+    }
+}
 
-.section__gallery-image {
-    // width: 100vw;
-    width: calc( 100% - 16px);
-    @media only screen and (min-width: 768px) {
-        width: 31vw;
-        height: auto;  
-        // padding-bottom: 2vw;
-        padding-bottom: 5%;
-        padding-right: 5%;
+.section__block {
+    // font-family:  'AvenirNextLTPro-Bold';
+    // line-height: 30px;
+    
+    // font-family: 'AvenirNextLTPro-Demi';
+    font-size: 14px;
+    line-height: 22px;
+    font-weight: bold;
+    @media (min-width: 768px) {
+        // padding-left: 10%;
+        // padding-right: 10%;
+    }
+}
+
+.section__subtitle {
+    // // font-size: 14px;
+    // // line-height: 22px;
+    // @media (min-width: 768px) {
+    //     font-size: 24px;
+    //     line-height: 32px;
+    // }
+    @media (min-width: 768px) {
+        padding-left: 10%;
+        margin-top: 32px;
+        margin-bottom: 1px;
+
     }
 }
 
 
 .section__gallery {
-    @media only screen and (min-width: 768px) {
+}
+
+.section__gallery-item {
+    @media (min-width: 768px) {
+        // width: 29vw;
+        // height: auto;  
+        // // padding-bottom: 2vw;
+        padding-bottom: 1%;
+        padding-right: 1%;
+    }
+    @media (min-width: 1280px) {
+        // width: 31vw;
+        // height: auto;  
+        // padding-bottom: 2vw;
+        padding-bottom: 1%;
+        padding-right: 1%;
+    }
+}
+.section__gallery-image {
+    // width: 100vw;
+    width: calc( 100% - 16px);
+    padding-bottom: 10px;
+    @media (min-width: 768px) {
+        width: 29vw;
+        height: auto;  
+        // padding-bottom: 2vw;
+        // padding-bottom: 5%;
+        // padding-right: 5%;
+    }
+    
+    @media (min-width: 1280px) {
+        width: 31vw;
+        height: auto;  
+        // padding-bottom: 2vw;
+        // padding-bottom: 5%;
+        // padding-right: 5%;
+    }
+}
+
+
+.section__gallery {
+    @media (min-width: 768px) {
         display:flex;
         flex-wrap: wrap;
         // justify-content: space-between;

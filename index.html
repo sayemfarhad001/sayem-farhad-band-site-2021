@@ -10,7 +10,7 @@
 <body>
     <header class="header__container">
         <div class="nav__bar__container">
-            <div class="nav__bar__container__title"><a class="nav__bar__container__title--link" href="./index.html">BANDSITE</a></div>
+            <div class="nav__bar__container__title logo"><a class="nav__bar__container__title--link" href="./index.html">BANDSITE</a></div>
             <nav class="nav__bar">
                 <ul class="nav__bar__list">
                     <li class="nav__bar__list-item" id="active"><a class="nav__bar__list-item--link active" href="./index.html">Biography</a></li>
@@ -18,26 +18,30 @@
                 </ul>
             </nav>
         </div>
-        <div class="hero__container" id="overlay">
-            <h1 class="hero__title">The Bee Knees</h1>
+        <div class="hero__container">
+            <div class="hero__container__overlay">
+                <h1 class="hero__title">The Bee Knees</h1>
+            </div>
         </div>
     </header>
     <main>
-        <h1 class="section__title">About the Musicians</h1>
-        <div class="section__container">
-            <p class="section__box"> 
-                <img class="section__box__image" src="./assets/images/band.jpg" alt="band">
-            </p>
-            <block>
-                “We push each other to be the best. It’s not uncommon for one of us to say ‘this 
-                needs to be better, back to the drawing board’” 
-            </block>
-            <p>- Bryan Teddy, lead vocalist of The Bees Knees</p>
-        </div>
+        <section class="section__container">
+            <h1 class="section__title">About the Musicians</h1>
+            <div class="section__block__container">
+                <p class="section__box"> 
+                    <img class="section__box__image" src="./assets/images/band.jpg" alt="band">
+                </p>
+                <block class="section__block">
+                    “We push each other to be the best. It’s not uncommon for one of us to say ‘this 
+                    needs to be better, back to the drawing board’” 
+                </block>
+                <p class="section__block">- Bryan Teddy, lead vocalist of The Bees Knees</p>
+            </div>
+        </section>
         <section class="section__container">
             <h2 class="section__subtitle">The Bees Knees</h2>
-            <div class="section__card__container">
-                <p class="section__card">
+            <div class="section__card__holder">
+                <p class="section__card__holder__card--left">
                     The Bees Knees is a pop rock band originating from San Francisco, California. The 
                     band consists of lead vocalist Bryan Teddy, guitarist Mack Tolkens, guitarist Andrew 
                     Green, bassist Kent Zulkee and drummer Freddie Fischer. The band achieved its first 
@@ -46,7 +50,7 @@
                     The Cat’s Meow), Adams was confident the band could succeed even further, pushing 
                     them to sign with Magenta Records. 
                 </p>
-                <p class="section__card">
+                <p class="section__card__holder__card--right">
                     From there, the band has soared, gaining international recognition and ranking in the 
                     top 10 on the Poster Charts. New fans immediately fell in love with the band’s original 
                     and organic attitude, solidifying their place as one of the hottest and fastest up and 
@@ -57,7 +61,7 @@
                 </p>
             </div>
         </section>
-        <section class="section__container">
+        <section class="section__container--background">
             <h1 class="section__title">Photo Gallery</h1>
             <div class="section__gallery"> 
                 <div class="section__gallery-item">
@@ -92,7 +96,7 @@
     </main>
     <footer class="footer">
         <section class="footer__title">
-            <h2 class="footer__title__text">Get in Touch</h2>
+            <h1 class="footer__title__text">Get in Touch</h1>
             <div class="footer__title__icon">
                 <a class="footer__title__icon__link" href="https://www.instagram.com">
                     <img class="footer__title__icon__link__image" src="./assets/icons/SVG/Icon-instagram.svg" alt="instagram"/>
@@ -104,7 +108,7 @@
                     <img class="footer__title__icon__link__image" src="./assets/icons/SVG/Icon-twitter.svg" alt="twitter"/>
                 </a>
             </div>
-            <p class="footer__end__title top"><a class="footer__end__title--link" href="./index.html">BANDSITE</a></p>
+            <p class="footer__end__title logo" id="top"><a class="footer__end__title--link" href="./index.html">BANDSITE</a></p>
         </section>
         <section class="footer__main">
             <div class="footer__main__card">
@@ -124,7 +128,7 @@
             </div>
         </section>
         <section class="footer__end">
-            <p class="footer__end__title bottom"><a class="footer__end__title--link" href="./index.html">BANDSITE</a></p>
+            <p class="footer__end__title logo" id="bottom"><a class="footer__end__title--link" href="./index.html">BANDSITE</a></p>
             <p class="footer__end__text">Copyright The Bees Knees © 2021 All Rights Reserved</p>
         </section>
     </footer>
