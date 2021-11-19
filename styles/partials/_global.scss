@@ -106,6 +106,7 @@ button {
     list-style: none;
 }
 
+
 // Navigation Styles
 .nav__bar__container {
     @include flexColumn ();
@@ -214,7 +215,7 @@ button {
             padding-right: 0;
             margin-left: 10vw;
             margin-right: 10vw;
-        } 
+        }
     }
     &__title {
         padding-left: 16px;
@@ -239,14 +240,14 @@ button {
         &__icon {
             display: flex;
             align-items: center;
-            &__link {
+            &-link {
                 @include noDecoration();
                 color: #ffffff;
                 padding-right: 30px;
                 @media (min-width: 768px) {
                     padding-top: 22px;
                 }
-                &__image {
+                &-image {
                     width: 130%;
                     height: auto;
                     padding-bottom: 10px;
@@ -280,7 +281,7 @@ button {
             @media (min-width: 1280px) {
                 padding-right: 90px;
             }
-            &__text {
+            &-text {
                 &--link {
                     @include noDecoration();
                     color: #ffffff;               
@@ -297,8 +298,6 @@ button {
                 color: #ffffff;
             }
         }
-
-
         &__text {
             padding-bottom: 16px;
             margin-bottom: 0;
@@ -315,7 +314,7 @@ button {
         padding-bottom: 7px;
     }
     @media (min-width: 1280px) {
-        padding-left: 26vw;
+        padding-left: 24vw;
     }
 }
 

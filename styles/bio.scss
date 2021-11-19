@@ -7,6 +7,7 @@ body {
     justify-content: center;
 }
 
+// Header _ Hero
 .hero__container {
     background-image: url('../assets/images/hero-bio.jpg');
     background-position: center;
@@ -19,7 +20,6 @@ body {
         align-items: center;
     }
 }
-
 .hero__title {
     color: #ffffff;
     margin-left: 16px;
@@ -37,6 +37,7 @@ body {
     }
 }
 
+// Main - Sections
 .section__container {
     margin-left: 16px;
     margin-right: 16px;
@@ -52,13 +53,120 @@ body {
         margin-right: 10vw;
     }
 }
-
 .section__container--background {
     background-color: #fafafa;
     @media (min-width: 1280px) {
         // padding-left: 10vw;
     }
 }
+
+.section__title {
+    font-family:  'AvenirNextLTPro-Demi';
+    margin-top: 16px;
+    padding-top: 16px;
+    @media (min-width: 768px) {
+        align-self: flex-start;
+        // margin-left: 32px; 
+    }
+}
+
+
+// Main - Musician Section
+.section__box__image {
+    width: 100%;
+    clip-path: inset(20% 0 0 0);
+    margin-top: -13%;
+    @media (min-width: 768px) {
+        clip-path: inset(14% 0 7% 0);
+        margin-top: -10%; 
+        margin-bottom: -4%;     
+    }
+    @media (min-width: 1280px) {
+        clip-path: inset(10% 0 9.5% 0);
+        margin-top: -6%;     
+    }
+    // width: calc( 100% - 16px);
+    // background-image: url("../assets/images/band.jpg");
+    // background-position: center;
+    // background-repeat: no-repeat;
+    // background-size: cover; 
+}
+.section__block__container {
+    @media (min-width: 768px) {
+        padding-left: 10%;
+        padding-right: 10%;
+    }
+}
+.section__quote {
+    @media (min-width: 1280px) {
+        max-width: 79%;
+    }
+}
+.section__block {
+    // font-family:  'AvenirNextLTPro-Bold';
+    // line-height: 30px;
+    
+    // font-family: 'AvenirNextLTPro-Demi';
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: bold;
+    @media (min-width: 768px) {
+        font-size: 24px;
+        line-height: 32px;
+        // padding-left: 10%;
+        // padding-right: 10%;
+    }
+}
+p.section__block {
+    @media (min-width: 768px) {
+        font-size: 18px;
+        line-height: 32px;
+        // padding-left: 10%;
+        // padding-right: 10%;
+    }
+}
+
+// Main - Paragraph Section
+.section__subtitle {
+    // // font-size: 14px;
+    // // line-height: 22px;
+    // @media (min-width: 768px) {
+    //     font-size: 24px;
+    //     line-height: 32px;
+    // }
+    @media (min-width: 768px) {
+        padding-left: 10%;
+        margin-top: 32px;
+        margin-bottom: 1px;
+
+    }
+}
+.section__card__holder {
+    @media (min-width: 768px) {
+        padding-left: 10%;
+        padding-right: 10%;
+        display: flex;
+    }
+    &-card--left {
+        @media (min-width: 768px) {
+            display: flex;
+            // padding-left: 10%;
+            padding-right: 5%;
+            font-size: 16px;
+        }   
+    }
+    &-card--right {
+        @media (min-width: 768px) {
+            display: flex;
+            padding-left: 1%;
+            padding-right: 5%;
+            font-size: 16px;
+        }   
+    }
+}
+
+
+// Main - Photo Gallery Section
 .section__gallery__container {
     padding-left: 16px;
     // padding-right: 16px;
@@ -86,96 +194,18 @@ body {
         margin-right: 6vw;
     } 
 }
-.section__title {
-    font-family:  'AvenirNextLTPro-Demi';
-    margin-top: 16px;
-    padding-top: 16px;
+.section__gallery {
     @media (min-width: 768px) {
-        align-self: flex-start;
-        // margin-left: 32px; 
+        display:flex;
+        flex-wrap: wrap;
+        // width: 102%;
+        // justify-content: space-between;
     }
-}
-
-.section__box__image {
-    width: 100%;
-    // width: calc( 100% - 16px);
-    // background-image: url("../assets/images/band.jpg");
-    // background-position: center;
-    // background-repeat: no-repeat;
-    // background-size: cover; 
-}
-
-.section__block__container {
-    @media (min-width: 768px) {
-        padding-left: 10%;
-        padding-right: 10%;
+    @media (min-width: 1280px) {
+        width: 92%;
     }
-}
-
-.section__card__holder {
-    @media (min-width: 768px) {
-        padding-left: 10%;
-        padding-right: 10%;
-        display: flex;
-    }
-    &__card--left {
-        @media (min-width: 768px) {
-            display: flex;
-            // padding-left: 10%;
-            padding-right: 5%;
-            font-size: 16px;
-        }   
-    }
-    &__card--right {
-        @media (min-width: 768px) {
-            display: flex;
-            padding-left: 1%;
-            padding-right: 5%;
-            font-size: 16px;
-        }   
-    }
-}
-
-.section__block {
-    // font-family:  'AvenirNextLTPro-Bold';
-    // line-height: 30px;
     
-    // font-family: 'AvenirNextLTPro-Demi';
-    font-size: 16px;
-    line-height: 24px;
-    font-weight: bold;
-    @media (min-width: 768px) {
-        font-size: 24px;
-        line-height: 32px;
-        // padding-left: 10%;
-        // padding-right: 10%;
-    }
-
 }
-p.section__block {
-    @media (min-width: 768px) {
-        font-size: 18px;
-        line-height: 32px;
-        // padding-left: 10%;
-        // padding-right: 10%;
-    }
-}
-
-.section__subtitle {
-    // // font-size: 14px;
-    // // line-height: 22px;
-    // @media (min-width: 768px) {
-    //     font-size: 24px;
-    //     line-height: 32px;
-    // }
-    @media (min-width: 768px) {
-        padding-left: 10%;
-        margin-top: 32px;
-        margin-bottom: 1px;
-
-    }
-}
-
 .section__gallery-item {
     @media (min-width: 768px) {
         // width: 29vw;
@@ -189,9 +219,10 @@ p.section__block {
         // width: 31vw;
         // height: auto;  
         // padding-bottom: 2vw;
-        padding-bottom: 1%;
-        padding-right: 1%;
-        width:32%;
+        
+        // padding-bottom: 1%;
+        // padding-right: 1%;
+        // width:32%;
     }
 }
 .section__gallery-image {
@@ -206,8 +237,7 @@ p.section__block {
         // padding-bottom: 2vw;
         // padding-bottom: 5%;
         // padding-right: 5%;
-    }
-    
+    }   
     @media (min-width: 1280px) {
         width: 100%;
         // width: 31vw;
@@ -217,23 +247,8 @@ p.section__block {
         // padding-right: 5%;
     }
 }
-
-
 @media (hover: hover) {
     .section__gallery-image:hover {        
         filter: none;     
     }
-}
-
-.section__gallery {
-    @media (min-width: 768px) {
-        display:flex;
-        flex-wrap: wrap;
-        // width: 102%;
-        // justify-content: space-between;
-    }
-    @media (min-width: 1280px) {
-        width: 92%;
-    }
-    
 }
