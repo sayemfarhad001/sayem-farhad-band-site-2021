@@ -1,13 +1,13 @@
 @use './partials/global';
+@use './partials/variables';
 
 body {
     margin: 0;
-    display: flex;
-    flex-direction: column;
+    @include global.flexColumn ();
     justify-content: center;
 }
 
-// Header _ Hero
+// Header - Hero
 .hero__container {
     background-image: url('../assets/images/hero-bio.jpg');
     background-position: center;
@@ -21,7 +21,7 @@ body {
     }
 }
 .hero__title {
-    color: #ffffff;
+    color: variables.$colorWhite;
     margin-left: 16px;
     margin-right: 16px;
     @media (min-width: 768px) {
@@ -31,9 +31,6 @@ body {
     @media (min-width: 1280px) {
         margin-left: 10vw;
         margin-right: 10vw;
-        // padding-left: 36px;
-        // margin-left: auto;
-        // margin-right: auto;
     }
 }
 
@@ -54,9 +51,8 @@ body {
     }
 }
 .section__container--background {
-    background-color: #fafafa;
+    background-color: variables.$colorAlabaster;
     @media (min-width: 1280px) {
-        // padding-left: 10vw;
     }
 }
 
@@ -66,7 +62,6 @@ body {
     padding-top: 16px;
     @media (min-width: 768px) {
         align-self: flex-start;
-        // margin-left: 32px; 
     }
 }
 
@@ -85,11 +80,6 @@ body {
         clip-path: inset(10% 0 9.5% 0);
         margin-top: -6%;     
     }
-    // width: calc( 100% - 16px);
-    // background-image: url("../assets/images/band.jpg");
-    // background-position: center;
-    // background-repeat: no-repeat;
-    // background-size: cover; 
 }
 .section__block__container {
     @media (min-width: 768px) {
@@ -103,37 +93,23 @@ body {
     }
 }
 .section__block {
-    // font-family:  'AvenirNextLTPro-Bold';
-    // line-height: 30px;
-    
-    // font-family: 'AvenirNextLTPro-Demi';
     font-size: 16px;
     line-height: 24px;
     font-weight: bold;
     @media (min-width: 768px) {
         font-size: 24px;
         line-height: 32px;
-        // padding-left: 10%;
-        // padding-right: 10%;
     }
 }
 p.section__block {
     @media (min-width: 768px) {
         font-size: 18px;
         line-height: 32px;
-        // padding-left: 10%;
-        // padding-right: 10%;
     }
 }
 
 // Main - Paragraph Section
 .section__subtitle {
-    // // font-size: 14px;
-    // // line-height: 22px;
-    // @media (min-width: 768px) {
-    //     font-size: 24px;
-    //     line-height: 32px;
-    // }
     @media (min-width: 768px) {
         padding-left: 10%;
         margin-top: 32px;
@@ -150,7 +126,6 @@ p.section__block {
     &-card--left {
         @media (min-width: 768px) {
             display: flex;
-            // padding-left: 10%;
             padding-right: 5%;
             font-size: 16px;
         }   
@@ -169,22 +144,10 @@ p.section__block {
 // Main - Photo Gallery Section
 .section__gallery__container {
     padding-left: 16px;
-    // padding-right: 16px;
     padding-bottom: 16px;
     @media (min-width: 768px) {
-        display: flex;
-        /* margin-left: 36px; */
-        flex-direction: column;
-        // align-items: center;
-        
-        // padding-left: 36px;
-        // margin-left: 36px;
-        // // margin-right: 36px;
-        // margin-left: auto;
-        // margin-right: auto;
+        @include global.flexColumn ();
         padding-left: 52px;
-        // padding-right: 36px;
-        // margin-right: -124px;
         padding-top: 25px;
     } 
     @media (min-width: 1280px) {
@@ -198,8 +161,6 @@ p.section__block {
     @media (min-width: 768px) {
         display:flex;
         flex-wrap: wrap;
-        // width: 102%;
-        // justify-content: space-between;
     }
     @media (min-width: 1280px) {
         width: 92%;
@@ -208,43 +169,24 @@ p.section__block {
 }
 .section__gallery-item {
     @media (min-width: 768px) {
-        // width: 29vw;
-        // height: auto;  
-        // // padding-bottom: 2vw;
         padding-bottom: 1%;
         padding-right: 2vw;
         width:30%;
     }
     @media (min-width: 1280px) {
-        // width: 31vw;
-        // height: auto;  
-        // padding-bottom: 2vw;
-        
-        // padding-bottom: 1%;
-        // padding-right: 1%;
-        // width:32%;
     }
 }
 .section__gallery-image {
-    // width: 100vw;
     width: calc( 100% - 16px);
     padding-bottom: 10px;
     @media (min-width: 768px) {
         width: 100%;
-        // width: 28vw;
         height: auto;
         filter: grayscale(100%);  
-        // padding-bottom: 2vw;
-        // padding-bottom: 5%;
-        // padding-right: 5%;
     }   
     @media (min-width: 1280px) {
         width: 100%;
-        // width: 31vw;
         height: auto;  
-        // padding-bottom: 2vw;
-        // padding-bottom: 5%;
-        // padding-right: 5%;
     }
 }
 @media (hover: hover) {
