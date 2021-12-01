@@ -1,3 +1,3 @@
 #Ignore SCSS map files and any compiled CSS files
 *.css.map
-*.css
+# *.css

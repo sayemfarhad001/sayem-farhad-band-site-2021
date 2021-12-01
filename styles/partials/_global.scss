@@ -43,8 +43,12 @@
     font-size: 32px;
     line-height: 32px;
     @media (min-width: 768px) {
-        padding-left: 5%;
+        padding-left: 50px;
         padding-bottom: 24px;
+    }
+    @media (min-width: 1280px) {
+        margin-left: 10vw;
+        margin-right: 10vw;
     }
 }
 

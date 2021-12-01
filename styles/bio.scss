@@ -182,11 +182,12 @@ p.section__block {
     @media (min-width: 768px) {
         width: 100%;
         height: auto;
-        filter: grayscale(100%);  
+          
     }   
     @media (min-width: 1280px) {
         width: 100%;
-        height: auto;  
+        height: auto;
+        filter: grayscale(100%);  
     }
 }
 @media (hover: hover) {
