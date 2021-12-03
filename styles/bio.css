@@ -47,7 +47,6 @@
 @media (min-width: 1280px) {
   .logo {
     margin-left: 10vw;
-    margin-right: 10vw;
   }
 }
 
@@ -96,14 +95,28 @@ footer {
 }
 
 button {
+  border: none;
+  padding: 0;
   font-size: 10px;
   line-height: 20px;
+  width: 100%;
+  height: 40px;
+  background-color: #323232;
+  color: #ffffff;
+  border-radius: 4px;
 }
 @media (min-width: 768px) {
   button {
     font-size: 12px;
     line-height: 20px;
+    width: 150px;
+    padding-left: 32px;
+    padding-right: 32px;
   }
+}
+
+button:hover {
+  background-color: #000000;
 }
 
 .nav__bar__container {
@@ -331,7 +344,7 @@ button {
 }
 @media (min-width: 1280px) {
   #top {
-    padding-left: 24vw;
+    padding-left: 19vw;
   }
 }
 
@@ -564,4 +577,45 @@ body {
   .section__gallery-image:hover {
     filter: none;
   }
+}
+.section__form {
+  display: flex;
+  align-items: flex-start;
+}
+
+.section__form-logo {
+  width: 36px;
+  height: 36px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 50%;
+  margin-top: 3px;
+  background-color: #e1e1e1;
+}
+@media (min-width: 768px) {
+  .section__form-logo {
+    width: 48px;
+    height: 48px;
+    margin-top: 5px;
+  }
+}
+
+.section__form-logo__image {
+  width: 56px;
+  height: auto;
+  margin: auto -4px;
+}
+@media (min-width: 768px) {
+  .section__form-logo__image {
+    width: 79px;
+    margin: auto -6px;
+  }
+}
+
+.userName {
+  color: brown;
+}
+
+.form {
+  padding-bottom: 16px;
 }/*# sourceMappingURL=bio.css.map */

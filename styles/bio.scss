@@ -195,3 +195,41 @@ p.section__block {
         filter: none;     
     }
 }
+
+
+
+.section__form {
+    display: flex;
+    align-items: flex-start;
+}
+.section__form-logo {
+    width: 36px;
+    height: 36px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 50%;
+    margin-top: 3px;
+    background-color: variables.$colorMercury;
+    @media (min-width: 768px) {
+        width: 48px;
+        height: 48px;
+        margin-top: 5px;      
+    }   
+}
+
+.section__form-logo__image {
+    width: 56px;
+    height:auto;
+    margin: auto -4px;
+    @media (min-width: 768px) {
+        width: 79px;
+        margin: auto -6px;      
+    }
+}
+
+.userName {
+    color: brown;
+}
+.form {
+    padding-bottom: 16px;
+}

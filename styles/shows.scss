@@ -37,6 +37,16 @@ body {
     }
 }
 
+.hero__text {
+    @media (min-width: 768px) {
+        margin-left: 0vw;
+    }
+    @media (min-width: 1280px) {
+        margin-left: -1vw;
+    }
+
+}
+
 .hero__text--top {
     color: variables.$colorWhite;
     margin-left: 16px;
@@ -73,6 +83,7 @@ body {
     @media (min-width: 1280px) {
         margin-left: 10vw;
         margin-right: 10vw;
+        width: 475px;
     }
 }
 .hero__sound {
@@ -81,7 +92,7 @@ body {
     @media (min-width: 768px) {
     }
     @media (min-width: 1280px) {
-        padding-top: 120px;
+        padding-top: 200px;
     }
 
 }
@@ -94,9 +105,85 @@ body {
     @media (min-width: 768px) {
         margin-left: 52px;
         margin-right: 36px;
-        width: 337.5px;
+        min-width: 337.5px;
+        max-width: 400px;
     }
     @media (min-width: 1280px) {
-
+        width: 400px;
     }
+}
+
+.section__container {
+    // margin-left: 16px;
+    // margin-right: 16px;
+    padding-left: 16px;
+    padding-right: 16px;
+    @media (min-width: 768px) {
+        margin-left: 52px;
+        margin-right: 36px;
+        padding-top: 25px;
+    }
+    @media (min-width: 1280px) {
+        padding-left: 0;
+        padding-right: 0;
+        margin-left: 10vw;
+        margin-right: 10vw;
+    }
+}
+
+.section__title {
+    font-family:  'AvenirNextLTPro-Demi';
+    margin-top: 16px;
+    padding-top: 16px;
+    @media (min-width: 768px) {
+        align-self: flex-start;
+    }
+}
+
+.shows__list {
+    @include global.noDecoration();
+    @include global.flexColumn();
+    padding-left: 0;
+
+}
+
+.ticket {
+    font-size: 16px;
+    font-weight: bold;
+    @media (min-width: 768px) {
+        width: fit-content;
+    }
+}
+.date {
+    font-weight: bold;
+    font-size: 16px;
+    @media (min-width: 768px) {
+        font-size: 20px;
+    }
+}
+
+.show {
+    font-size: 16px;    
+    padding-top: 3px;
+    padding-bottom: 5px;
+    padding-left: 16px;
+    padding-right: 16px;
+    border-bottom: 3px solid variables.$colorMercury;
+    @media (min-width: 768px) {
+        font-size: 18px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-left: 18px;
+        padding-right: 18px;
+    }
+    @media (min-width: 1280px) {
+    }
+}
+
+.show:active {
+    background-color: variables.$colorMercury;
+}
+.show:hover {
+    background-color: variables.$colorAlabaster;
 }

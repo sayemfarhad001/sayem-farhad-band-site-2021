@@ -29,6 +29,16 @@
     font-family: 'AvenirNextLTPro-Regular', 'AvenirNextLTPro-Demi', 'AvenirNextLTPro-Bold';
 }
 
+// Creating mixins
+@mixin flexColumn () {
+    display: flex;
+    flex-direction: column;
+}
+
+@mixin noDecoration () {
+    text-decoration: none;
+    list-style: none;
+}
 
 // Font Sizing
 .hero__title {
@@ -48,7 +58,7 @@
     }
     @media (min-width: 1280px) {
         margin-left: 10vw;
-        margin-right: 10vw;
+        // margin-right: 10vw;
     }
 }
 
@@ -88,27 +98,26 @@ footer {
 }
 
 button {
+    border: none;
+	padding: 0;
     font-size: 10px;
     line-height: 20px;
+    width: 100%;
+    height: 40px;
+    background-color: variables.$colorBlack;
+    color: variables.$colorWhite;
+    border-radius: 4px;
     @media (min-width: 768px) {
         font-size: 12px;
         line-height: 20px;
+        width: 150px;
+        padding-left: 32px;
+        padding-right: 32px;
     }
 }
-
-
-// Creating mixins
-@mixin flexColumn () {
-    display: flex;
-    flex-direction: column;
+button:hover {
+    background-color: variables.$colorDarkBlack;
 }
-
-@mixin noDecoration () {
-    text-decoration: none;
-    list-style: none;
-}
-
-
 
 // Navigation Styles
 .nav__bar__container {
@@ -307,7 +316,7 @@ button {
         padding-bottom: 7px;
     }
     @media (min-width: 1280px) {
-        padding-left: 24vw;
+        padding-left: 19vw;
     }
 }
 

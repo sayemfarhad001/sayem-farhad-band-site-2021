@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+	<script src="../scripts/build-shows-page.js" defer></script>
     <link rel="stylesheet" type="text/css" href="../styles/shows.css">
     <title>Shows Bandsite 2021</title>
 </head>
@@ -16,7 +16,7 @@
             <nav class="nav__bar">
                 <ul class="nav__bar__list">
                     <li class="nav__bar__list-item"><a class="nav__bar__list-item--link" href="../index.html">Biography</a></li>
-                    <li class="nav__bar__list-item" id="active"><a class="nav__bar__list-item--link active" href="./pages/shows.html">Shows</a></li>
+                    <li class="nav__bar__list-item" id="active"><a class="nav__bar__list-item--link active" href="./shows.html">Shows</a></li>
                 </ul>
             </nav>
         </div>
@@ -30,6 +30,7 @@
 					<!-- <iframe class="hero__title__sound" width="90%" height="166" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/619877097&color=%23ff5500&auto_play=true&hide_related=false"></iframe> -->
 
 					<iframe class="hero__sound__music" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/619877097&color=%23ff5500&auto_play=true&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe>
+					
 					<!-- <div style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;">
 						<a href="https://soundcloud.com/user-541691998" title="Emily Marina Music" target="_blank" style="color: #cccccc; text-decoration: none;">Emily Marina Music</a> · 
 						<a href="https://soundcloud.com/user-541691998/jai-ho-from-the-movie-slumdog" title="Jai Ho from The Movie &#x27;Slumdog Millionaire&#x27; - A. R. Rahman" target="_blank" style="color: #cccccc; text-decoration: none;">Jai Ho from The Movie &#x27;Slumdog Millionaire&#x27; - A. R. Rahman</a>
@@ -48,6 +49,26 @@
     <!-- Main - Musician Section, Paragraph Section, Photo Gallery Section -->
     <main>
         <section class="section__container">
+            <h1 class="section__title">Shows</h1>
+            <div class="shows__container">
+                <ul class="shows__list">
+                </ul>            
+            </div>
+    
+            <!-- <div class="section__block__container">
+                <p class="section__box"> 
+                    <img class="section__box__image" src="./assets/images/band.jpg" alt="band">
+                </p>
+                <div class="section__quote">
+                    <q class="section__block">
+                        We push each other to be the best. It’s not uncommon for one of us to say ‘this 
+                        needs to be better, back to the drawing board’ 
+                    </q>
+                </div>
+                <p class="section__block">- Bryan Teddy, lead vocalist of The Bees Knees</p>
+            </div> -->
+        </section>
+        <!-- <section class="section__container">
             <h1 class="section__title">About the Musicians</h1>
             <div class="section__block__container">
                 <p class="section__box"> 
@@ -118,31 +139,8 @@
                     </div>
                 </div>
             </div>
-        </section>
+        </section> -->
 
-        <!-- Main - Comment Section -->
-        <section class="section__container">
-            <div class="Section__comment">
-                <h1>Join the Conversation</h1>
-                <div class="comment__comment-logo">
-                    <img class="comment__comment-logo__image" src="assets/images/Mohan-muruge.jpg">    
-                </div>
-                <div class="comment__comment-form">
-                    <form>
-                        <label for="name">NAME</label><br>
-                        <input type="text" id="name" name="name" value="Enter your name"><br>
-                        <label for="comment">COMMENT</label><br>
-                        <input type="text" id="comment" name="comment" value="Add a new comment"><br><br>
-                        <!-- <input type="submit" value="COMMENT"> -->
-                        <button id="myButton">COMMENT</button>
-                    </form>
-                </div>
-            </div>
-            
-            <div>
-
-            </div>
-        </section>
     </main>
     <!-- Footer - Title, Main Cards, End  -->
     <footer class="footer">
@@ -151,16 +149,16 @@
                 <h1 class="footer__title__text">Get in Touch</h1>
                 <div class="footer__title__icon">
                     <a class="footer__title__icon-link" href="https://www.instagram.com">
-                        <img class="footer__title__icon-link-image" src="./assets/icons/SVG/Icon-instagram.svg" alt="instagram"/>
+                        <img class="footer__title__icon-link-image" src="../assets/icons/SVG/Icon-instagram.svg" alt="instagram"/>
                     </a>
                     <a class="footer__title__icon-link" href="https://www.facebook.com/">
-                        <img class="footer__title__icon-link-image" src="./assets/icons/SVG/Icon-facebook.svg" alt="facebook"/>
+                        <img class="footer__title__icon-link-image" src="../assets/icons/SVG/Icon-facebook.svg" alt="facebook"/>
                     </a>
                     <a class="footer__title__icon-link" href="https://www.twitter.com">
-                        <img class="footer__title__icon-link-image" src="./assets/icons/SVG/Icon-twitter.svg" alt="twitter"/>
+                        <img class="footer__title__icon-link-image" src="../assets/icons/SVG/Icon-twitter.svg" alt="twitter"/>
                     </a>
                 </div>
-                <p class="footer__title__logo footer__end__title logo" id="top"><a class="footer__end__title--link" href="./index.html">BANDSITE</a></p>
+                <p class="footer__title__logo footer__end__title logo" id="top"><a class="footer__end__title--link" href="../index.html">BANDSITE</a></p>
             </section>
             <section class="footer__main">
                 <div class="footer__main__card">
@@ -180,7 +178,7 @@
                 </div>
             </section>
             <section class="footer__end">
-                <p class="footer__end__title logo" id="bottom"><a class="footer__end__title--link" href="./index.html">BANDSITE</a></p>
+                <p class="footer__end__title logo" id="bottom"><a class="footer__end__title--link" href="../index.html">BANDSITE</a></p>
                 <p class="footer__end__text">Copyright The Bees Knees © 2021 All Rights Reserved</p>
             </section>
         </div>
