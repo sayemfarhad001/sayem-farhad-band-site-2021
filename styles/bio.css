@@ -578,9 +578,49 @@ body {
     filter: none;
   }
 }
-.section__form {
+input[type=text], select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 2px solid #e1e1e1;
+  background-color: #fafafa;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+textarea[type=text], select {
+  width: 100%;
+  padding: 18px 20px;
+  margin: 10px 0;
+  display: inline-block;
+  border: 2px solid #e1e1e1;
+  background-color: #fafafa;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+input[class=error], textarea[class=error] {
+  border: 1px solid #d22d2d;
+}
+
+.button__holder {
+  width: 100%;
   display: flex;
-  align-items: flex-start;
+  justify-content: flex-end;
+}
+
+.section__form__holder {
+  padding: 20px;
+  width: 100%;
+}
+
+.section__form {
+  margin-top: 20px;
+  padding-top: 20px;
+  padding-right: 10px;
+  display: flex;
+  width: 92%;
 }
 
 .section__form-logo {
@@ -589,7 +629,7 @@ body {
   position: relative;
   overflow: hidden;
   border-radius: 50%;
-  margin-top: 3px;
+  margin-top: 12px;
   background-color: #e1e1e1;
 }
 @media (min-width: 768px) {
@@ -612,10 +652,75 @@ body {
   }
 }
 
-.userName {
-  color: brown;
+.user__name {
+  color: #afafaf;
+  font-weight: bold;
+}
+
+.user__comment {
+  margin-top: 10px;
+  color: #afafaf;
+  font-weight: bold;
 }
 
 .form {
   padding-bottom: 16px;
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  padding-left: 10px;
+}
+@media (min-width: 768px) {
+  .form {
+    padding-left: 24px;
+    width: 100%;
+  }
+}
+
+.section__comment {
+  border-bottom: 3px solid #e1e1e1;
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+}
+
+.section__form-mainDiv {
+  margin-top: 20px;
+  padding-top: 12px;
+  display: flex;
+  width: 92%;
+  border-top: 3px solid #e1e1e1;
+  font-size: 16px;
+}
+
+.section__form-outerDiv {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  padding-left: 10px;
+}
+@media (min-width: 768px) {
+  .section__form-outerDiv {
+    padding-left: 24px;
+    width: 100%;
+  }
+}
+
+.section__form-innerDiv {
+  display: flex;
+  justify-content: space-between;
+}
+
+.section__form-name {
+  font-size: 16px;
+  font-weight: bold;
+}
+@media (min-width: 768px) {
+  .section__form-name {
+    font-size: 20px;
+  }
+}
+
+.section__form-timeStamp {
+  color: #afafaf;
+  font-weight: bold;
 }/*# sourceMappingURL=bio.css.map */

@@ -372,10 +372,19 @@ body {
 }
 @media (min-width: 768px) {
   .hero__container {
+    height: 70%;
     background-repeat: no-repeat;
     -webkit-clip-path: inset(85px 0 0 0);
             clip-path: inset(85px 0 0 0);
     margin-top: -85px;
+  }
+}
+@media (min-width: 1280px) {
+  .hero__container {
+    height: 60vw;
+    -webkit-clip-path: inset(145px 0 0 0);
+            clip-path: inset(145px 0 0 0);
+    margin-top: -145px;
   }
 }
 .hero__container__overlay {
@@ -388,6 +397,7 @@ body {
 @media (min-width: 1280px) {
   .hero__container__overlay {
     flex-direction: row;
+    align-items: center;
   }
 }
 
@@ -501,6 +511,19 @@ body {
   }
 }
 
+@media (min-width: 1280px) {
+  .section__container__transform {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+@media (min-width: 1280px) {
+  .shows__container {
+    width: 83%;
+  }
+}
+
 .section__title {
   font-family: "AvenirNextLTPro-Demi";
   margin-top: 16px;
@@ -520,50 +543,103 @@ body {
   padding-left: 0;
 }
 
-.ticket {
-  font-size: 16px;
+.date__div,
+.venue__div,
+.location__div,
+.ticket__div {
+  width: 100%;
+}
+@media (min-width: 768px) {
+  .date__div,
+.venue__div,
+.location__div,
+.ticket__div {
+    width: 20vw;
+  }
+}
+@media (min-width: 1280px) {
+  .date__div,
+.venue__div,
+.location__div,
+.ticket__div {
+    width: 20%;
+  }
+}
+
+.show__ticket {
+  font-size: 14px;
   font-weight: bold;
 }
 @media (min-width: 768px) {
-  .ticket {
+  .show__ticket {
     width: -webkit-fit-content;
     width: -moz-fit-content;
     width: fit-content;
   }
 }
 
-.date {
+.show__date {
   font-weight: bold;
   font-size: 16px;
+  font-family: "AvenirNextLTPro-Bold";
 }
 @media (min-width: 768px) {
-  .date {
-    font-size: 20px;
+  .show__date {
+    font-size: 16px;
   }
 }
 
 .show {
   font-size: 16px;
+  font-weight: bold;
   padding-top: 3px;
-  padding-bottom: 5px;
+  padding-bottom: 25px;
   padding-left: 16px;
   padding-right: 16px;
   border-bottom: 3px solid #e1e1e1;
 }
 @media (min-width: 768px) {
   .show {
-    font-size: 18px;
+    font-size: 16px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding-left: 18px;
     padding-right: 18px;
+    padding-top: 10px;
+    padding-bottom: 10px;
   }
 }
+
 .show:active {
   background-color: #e1e1e1;
 }
 
 .show:hover {
   background-color: #fafafa;
+}
+
+.show__title__date,
+.show__title__venue,
+.show__title__location {
+  color: #afafaf;
+}
+
+@media (min-width: 768px) {
+  .hide__later {
+    display: none;
+  }
+}
+
+@media (min-width: 768px) {
+  .keep {
+    display: flex;
+    padding-bottom: 24px;
+  }
+}
+
+@media (min-width: 768px) {
+  .keep__down {
+    margin-top: 54px;
+  }
 }/*# sourceMappingURL=shows.css.map */

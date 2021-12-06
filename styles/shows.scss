@@ -10,21 +10,21 @@ body {
 // Header - Hero
 .hero__container {
     background-image: url('../assets/images/hero-shows.jpg');
-
     background-size: cover;
-    
     width: 100%;
-
     @media (min-width: 768px) {
+    
+        height: 70%; 
         background-repeat: no-repeat;
         // background-position: 50px 50px;     
         clip-path: inset(85px 0 0 0);
         margin-top: -85px;
     }
     @media (min-width: 1280px) {
-          
+        height: 60vw;
+        clip-path: inset(145px 0 0 0);
+        margin-top: -145px;
     }
-
     &__overlay {
         width: 100%;
         height: 100%;  
@@ -32,8 +32,8 @@ body {
         @include global.flexColumn ();
         @media (min-width: 1280px) {
             flex-direction: row;
+            align-items: center;
         }
-    
     }
 }
 
@@ -130,7 +130,18 @@ body {
         margin-right: 10vw;
     }
 }
+.section__container__transform {
+    @media (min-width: 1280px) {
+    display: flex;
+    justify-content: space-between;
+    }
+}
 
+.shows__container {
+    @media (min-width: 1280px) {
+        width: 83%;
+    }
+}
 .section__title {
     font-family:  'AvenirNextLTPro-Demi';
     margin-top: 16px;
@@ -147,37 +158,54 @@ body {
 
 }
 
-.ticket {
-    font-size: 16px;
+.date__div, 
+.venue__div, 
+.location__div,
+.ticket__div {
+    width: 100%;
+    @media (min-width: 768px) {
+        width: 20vw;
+    }    
+    @media (min-width: 1280px) {
+        width: 20%;
+    }    
+}
+
+
+
+.show__ticket {
+    font-size: 14px;
     font-weight: bold;
     @media (min-width: 768px) {
         width: fit-content;
     }
 }
-.date {
+.show__date {
     font-weight: bold;
-    font-size: 16px;
+    font-size: 16px;    
+    font-family: "AvenirNextLTPro-Bold";
     @media (min-width: 768px) {
-        font-size: 20px;
+        font-size: 16px;
     }
 }
 
 .show {
-    font-size: 16px;    
+    font-size: 16px;
+    font-weight: bold;
     padding-top: 3px;
-    padding-bottom: 5px;
+    padding-bottom: 25px;
     padding-left: 16px;
     padding-right: 16px;
     border-bottom: 3px solid variables.$colorMercury;
     @media (min-width: 768px) {
-        font-size: 18px;
+        font-size: 16px;
         display: flex;
         justify-content: space-between;
         align-items: center;
         padding-left: 18px;
         padding-right: 18px;
-    }
-    @media (min-width: 1280px) {
+        padding-top: 10px;
+        padding-bottom: 10px;
     }
 }
 
@@ -186,4 +214,29 @@ body {
 }
 .show:hover {
     background-color: variables.$colorAlabaster;
+}
+
+.show__title__date,
+.show__title__venue,
+.show__title__location {
+    color: variables.$colorSilver;
+}
+
+.hide__later {
+    @media (min-width: 768px) {
+        display: none;
+    }
+}
+
+.keep {
+    @media (min-width: 768px) {
+        display: flex;
+        padding-bottom: 24px;
+    }
+}
+
+.keep__down {
+    @media (min-width: 768px) {
+        margin-top: 54px;
+    }
 }

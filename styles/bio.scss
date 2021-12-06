@@ -197,10 +197,66 @@ p.section__block {
 }
 
 
+input[type=text], select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 2px solid variables.$colorMercury;
+    background-color: variables.$colorAlabaster;    
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+textarea[type=text], select {
+    width: 100%;
+    padding: 18px 20px;
+    margin: 10px 0;
+    display: inline-block;
+    border: 2px solid variables.$colorMercury;
+    background-color: variables.$colorAlabaster;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+input[class=error], textarea[class=error] {
+    border: 1px solid variables.$colorRed;
+}
+// input[type=submit] {
+//     width: 100%;
+//     background-color: #4CAF50;
+//     color: white;
+//     padding: 14px 20px;
+//     margin: 8px 0;
+//     border: none;
+//     border-radius: 4px;
+//     cursor: pointer;
+// }
+
+// input[type=submit]:hover {
+//     background-color: #45a049;
+// }
+.button__holder {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.section__form__holder {
+    // border-radius: 5px;
+    // background-color: #f2f2f2;
+    padding: 20px;
+    width: 100%;
+}
 
 .section__form {
-    display: flex;
-    align-items: flex-start;
+    margin-top: 20px;
+    padding-top: 20px;
+    padding-right: 10px;
+    display:flex;
+    width: 92%;
+    // display: flex;
+    // align-items: flex-start;
 }
 .section__form-logo {
     width: 36px;
@@ -208,7 +264,7 @@ p.section__block {
     position: relative;
     overflow: hidden;
     border-radius: 50%;
-    margin-top: 3px;
+    margin-top: 12px;
     background-color: variables.$colorMercury;
     @media (min-width: 768px) {
         width: 48px;
@@ -227,9 +283,66 @@ p.section__block {
     }
 }
 
-.userName {
-    color: brown;
+.user__name {
+    color: variables.$colorSilver;
+    font-weight: bold;
+}
+
+.user__comment {
+    margin-top: 10px;
+    color: variables.$colorSilver;
+    font-weight: bold;
 }
 .form {
     padding-bottom: 16px;
+    @include global.flexColumn();
+    width: 80%;
+    padding-left: 10px;
+    @media (min-width: 768px) {
+        padding-left: 24px;      
+        width: 100%;
+    }
+}
+
+.section__comment {
+    border-bottom: 3px solid variables.$colorMercury;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+}
+
+.section__form-mainDiv {
+    margin-top: 20px;
+    padding-top: 12px;
+    display:flex;
+    width: 92%;
+    border-top: 3px solid variables.$colorMercury;
+    font-size: 16px; 
+}
+.section__form-outerDiv {
+    @include global.flexColumn();
+    width: 80%;
+    padding-left: 10px;
+    @media (min-width: 768px) {
+        padding-left: 24px;      
+        width: 100%;
+    }
+
+}
+
+.section__form-innerDiv {
+    display:flex;
+    justify-content: space-between;
+}
+
+.section__form-name {
+    font-size: 16px;
+    font-weight: bold;
+    @media (min-width: 768px) {
+        font-size: 20px;
+    }
+}
+
+.section__form-timeStamp {
+    color: variables.$colorSilver;
+    font-weight: bold;
 }
