@@ -1,22 +1,20 @@
+// 1. Link partials
 @use './partials/global';
 @use './partials/variables';
-
+// 2. Start Styling Here
 body {
     margin: 0;
     @include global.flexColumn ();
     justify-content: center;
 }
-
-// Header - Hero
+// 2A - Style Header - Hero
 .hero__container {
     background-image: url('../assets/images/hero-shows.jpg');
     background-size: cover;
     width: 100%;
     @media (min-width: 768px) {
-    
         height: 70%; 
         background-repeat: no-repeat;
-        // background-position: 50px 50px;     
         clip-path: inset(85px 0 0 0);
         margin-top: -85px;
     }
@@ -36,7 +34,6 @@ body {
         }
     }
 }
-
 .hero__text {
     @media (min-width: 768px) {
         margin-left: 0vw;
@@ -44,9 +41,7 @@ body {
     @media (min-width: 1280px) {
         margin-left: -1vw;
     }
-
 }
-
 .hero__text--top {
     color: variables.$colorWhite;
     margin-left: 16px;
@@ -94,9 +89,7 @@ body {
     @media (min-width: 1280px) {
         padding-top: 200px;
     }
-
 }
-
 .hero__sound__music {
     margin-left: 16px;
     margin-right: 16px;
@@ -113,9 +106,8 @@ body {
     }
 }
 
+// 2B - Style Main - Default Sections
 .section__container {
-    // margin-left: 16px;
-    // margin-right: 16px;
     padding-left: 16px;
     padding-right: 16px;
     @media (min-width: 768px) {
@@ -136,7 +128,6 @@ body {
     justify-content: space-between;
     }
 }
-
 .shows__container {
     @media (min-width: 1280px) {
         width: 83%;
@@ -150,14 +141,12 @@ body {
         align-self: flex-start;
     }
 }
-
+// 2C - Style Main Section - Created by JS
 .shows__list {
     @include global.noDecoration();
     @include global.flexColumn();
     padding-left: 0;
-
 }
-
 .date__div, 
 .venue__div, 
 .location__div,
@@ -170,9 +159,6 @@ body {
         width: 20%;
     }    
 }
-
-
-
 .show__ticket {
     font-size: 14px;
     font-weight: bold;
@@ -188,7 +174,6 @@ body {
         font-size: 16px;
     }
 }
-
 .show {
     font-size: 16px;
     font-weight: bold;
@@ -208,33 +193,28 @@ body {
         padding-bottom: 10px;
     }
 }
-
-.show:active {
-    background-color: variables.$colorMercury;
-}
 .show:hover {
     background-color: variables.$colorAlabaster;
 }
-
+.show:active {
+    background-color: variables.$colorMercury;
+}
 .show__title__date,
 .show__title__venue,
 .show__title__location {
     color: variables.$colorSilver;
 }
-
 .hide__later {
     @media (min-width: 768px) {
         display: none;
     }
 }
-
 .keep {
     @media (min-width: 768px) {
         display: flex;
         padding-bottom: 24px;
     }
 }
-
 .keep__down {
     @media (min-width: 768px) {
         margin-top: 54px;

@@ -611,12 +611,12 @@ body {
   }
 }
 
-.show:active {
-  background-color: #e1e1e1;
-}
-
 .show:hover {
   background-color: #fafafa;
+}
+
+.show:active {
+  background-color: #e1e1e1;
 }
 
 .show__title__date,

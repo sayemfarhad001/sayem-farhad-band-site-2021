@@ -1,6 +1,6 @@
+// 1 - Link partials
 @use './variables';
-
-// Font activation
+// 2 - Font activation
 @font-face {
     font-family: 'AvenirNextLTPro-Regular';
 	src: url('../assets/fonts/AvenirNextLTPro-Regular.otf') format('otf');
@@ -8,7 +8,6 @@
     font-weight: normal;
     font-style: normal;
 }
-
 @font-face {
 	font-family: 'AvenirNextLTPro-Demi';
 	src: url('../assets/fonts/AvenirNextLTPro-Demi.otf') format('otf');
@@ -16,7 +15,6 @@
     font-weight: normal;
     font-style: normal;
 }
-
 @font-face {
     font-family: 'AvenirNextLTPro-Bold';
 	src: url('../assets/fonts/AvenirNextLTPro-Bold.otf') format('otf');
@@ -24,23 +22,19 @@
     font-weight: normal;
     font-style: normal;
 }
-
 * {
     font-family: 'AvenirNextLTPro-Regular', 'AvenirNextLTPro-Demi', 'AvenirNextLTPro-Bold';
 }
-
-// Creating mixins
+// 3 - Create mixins
 @mixin flexColumn () {
     display: flex;
     flex-direction: column;
 }
-
 @mixin noDecoration () {
     text-decoration: none;
     list-style: none;
 }
-
-// Font Sizing
+// 4 - Default Font Sizing
 .hero__title {
     font-size: 24px;
     line-height: 32px;
@@ -58,10 +52,8 @@
     }
     @media (min-width: 1280px) {
         margin-left: 10vw;
-        // margin-right: 10vw;
     }
 }
-
 h1 {
     font-size: 24px;
     line-height: 32px;
@@ -78,7 +70,6 @@ h2 {
         line-height: 32px;
     }
 }
-
 main {
     font-size: 14px;
     line-height: 18px;
@@ -87,7 +78,6 @@ main {
         line-height: 22px;
     }
 }
-
 footer {
     font-size: 13px;
     line-height: 18px;
@@ -96,7 +86,6 @@ footer {
         line-height: 20px;
     }
 }
-
 button {
     border: none;
 	padding: 0;
@@ -118,8 +107,7 @@ button {
 button:hover {
     background-color: variables.$colorDarkBlack;
 }
-
-// Navigation Styles
+// 5 - Style Navigation Bar
 .nav__bar__container {
     @include flexColumn ();
     background-color: variables.$colorBlack;
@@ -147,7 +135,6 @@ button:hover {
         }
     }
 }
-
 .nav__bar {
     &__list {
         display: flex;
@@ -201,9 +188,7 @@ button:hover {
 #active {  
     border-bottom: 2px solid variables.$colorWhite;
 }
-
-
-// Footer style
+// 6 - Style Footer
 .footer {
     background-color: variables.$colorBlack;
     color:variables.$colorWhite;
@@ -237,7 +222,6 @@ button:hover {
             @media (min-width: 1280px) {
                 padding-right: 105px;
             }
-            
         }
         &__icon {
             display: flex;
@@ -262,9 +246,6 @@ button:hover {
         &__logo {
             @media (min-width: 768px) {
                 padding-top: 22px;
-            }
-            @media (min-width: 1280px) {
- 
             }
         }
     }
@@ -306,7 +287,6 @@ button:hover {
         }
     }
 }
-
 #top {
     display: none;
     @media (min-width: 768px) {    
@@ -319,7 +299,6 @@ button:hover {
         padding-left: 19vw;
     }
 }
-
 #bottom {
     padding-top: 30px;
     margin-bottom: 0;
