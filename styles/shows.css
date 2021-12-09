@@ -97,7 +97,8 @@ footer {
 button {
   border: none;
   padding: 0;
-  font-size: 10px;
+  font-size: 16px;
+  font-weight: bold;
   line-height: 20px;
   width: 100%;
   height: 40px;
@@ -107,7 +108,8 @@ button {
 }
 @media (min-width: 768px) {
   button {
-    font-size: 12px;
+    font-size: 14px;
+    font-weight: bold;
     line-height: 20px;
     width: 150px;
     padding-left: 32px;
@@ -543,6 +545,24 @@ body {
   padding-left: 0;
 }
 
+.title__div {
+  display: none;
+}
+@media (min-width: 768px) {
+  .title__div {
+    font-size: 16px;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 18px;
+    padding-right: 18px;
+    padding-top: 31px;
+    padding-bottom: 10px;
+  }
+}
+
+.show__title,
 .date__div,
 .venue__div,
 .location__div,
@@ -550,7 +570,8 @@ body {
   width: 100%;
 }
 @media (min-width: 768px) {
-  .date__div,
+  .show__title,
+.date__div,
 .venue__div,
 .location__div,
 .ticket__div {
@@ -558,11 +579,24 @@ body {
   }
 }
 @media (min-width: 1280px) {
-  .date__div,
+  .show__title,
+.date__div,
 .venue__div,
 .location__div,
 .ticket__div {
     width: 20%;
+  }
+}
+
+.show__title__date,
+.show__title__venue,
+.show__title__location {
+  color: #afafaf;
+}
+
+@media (min-width: 768px) {
+  .hide__later {
+    display: none;
   }
 }
 
@@ -617,29 +651,4 @@ body {
 
 .show:active {
   background-color: #e1e1e1;
-}
-
-.show__title__date,
-.show__title__venue,
-.show__title__location {
-  color: #afafaf;
-}
-
-@media (min-width: 768px) {
-  .hide__later {
-    display: none;
-  }
-}
-
-@media (min-width: 768px) {
-  .keep {
-    display: flex;
-    padding-bottom: 24px;
-  }
-}
-
-@media (min-width: 768px) {
-  .keep__down {
-    margin-top: 54px;
-  }
 }/*# sourceMappingURL=shows.css.map */

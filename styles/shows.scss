@@ -147,6 +147,22 @@ body {
     @include global.flexColumn();
     padding-left: 0;
 }
+.title__div {
+    display: none;
+    @media (min-width: 768px) {
+        font-size: 16px;
+        font-weight: bold;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-left: 18px;
+        padding-right: 18px;
+        padding-top: 31px;
+        padding-bottom: 10px;
+    }
+
+}
+.show__title,
 .date__div, 
 .venue__div, 
 .location__div,
@@ -158,6 +174,16 @@ body {
     @media (min-width: 1280px) {
         width: 20%;
     }    
+}
+.show__title__date,
+.show__title__venue,
+.show__title__location {
+    color: variables.$colorSilver;
+}
+.hide__later {
+    @media (min-width: 768px) {
+        display: none;
+    }
 }
 .show__ticket {
     font-size: 14px;
@@ -198,25 +224,4 @@ body {
 }
 .show:active {
     background-color: variables.$colorMercury;
-}
-.show__title__date,
-.show__title__venue,
-.show__title__location {
-    color: variables.$colorSilver;
-}
-.hide__later {
-    @media (min-width: 768px) {
-        display: none;
-    }
-}
-.keep {
-    @media (min-width: 768px) {
-        display: flex;
-        padding-bottom: 24px;
-    }
-}
-.keep__down {
-    @media (min-width: 768px) {
-        margin-top: 54px;
-    }
 }
