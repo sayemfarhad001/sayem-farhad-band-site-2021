@@ -241,6 +241,14 @@ input[class=error], textarea[class=error] {
         margin-top: 5px;      
     }   
 }
+.form__logo {
+    width: 43px;
+    height: 36px;
+    @media (min-width: 768px) {
+        width: 48px;
+        height: 48px;
+    }
+}
 .section__form-logo__image {
     width: 56px;
     height:auto;
