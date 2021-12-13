@@ -1,3 +1,4 @@
+// All CODES added to Line 127 on index.html
 // 	Step 1 - create an editable Array with 3 default objects
 let commentArray = [{
 	id: "0",
