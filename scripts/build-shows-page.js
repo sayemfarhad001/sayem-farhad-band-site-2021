@@ -1,4 +1,33 @@
 // All CODES added to Line 43 on shows.html
+
+// get the axios promise
+const getURL = axios.get('https://project-1-api.herokuapp.com')
+// console.log the returned promise
+console.log(getURL)
+// calling the promise with .then and .catch
+getURL
+.then(result => {
+	// 
+	console.log(result)
+	// call whatEver() function created with target Array[result.data.data] as argument
+	whatEver(result.data.data);
+	
+	// Add page numbers
+	let currentPage = document.querySelector(".res__page");
+	let totalPages = document.querySelector(".res__total-pages");
+	currentPage.innerHTML = result.data.page;
+	totalPages.innerHTML = result.data.total_pages;
+
+	// Add Text info after converting JSON to 'String'
+	let selectAd = document.querySelector(".res__ad");
+	let stringedText = JSON.stringify(result.data.support.text);
+	selectAd.innerHTML = stringedText;
+}) 
+.catch((error) => {
+console.log(error);
+});		// promise call - ends here
+
+
 // STEP 1 - Create "Arrays of Show Data"
 const showArray = [
     {

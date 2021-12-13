@@ -1,4 +1,109 @@
 // All CODES added to Line 127 on index.html
+
+// Attempt 1 await/ async
+// let myKey = "";
+// copyKey().catch((error) => {
+// 	console.log(error);
+// });		// promise call - ends here
+
+// async function copyKey() {
+// 	const getKeyURL = await axios.get('https://project-1-api.herokuapp.com/register');
+// 	const getKey = getKeyURL.data.api_key 
+// 	//JSON.stringify(getKeyURL.data.api_key)
+// 	myKey = myKey + getKey;
+// }
+
+// console.log(myKey);
+
+
+// async function getComments() {
+// 	await copyKey();
+// 	let link = 'https://project-1-api.herokuapp.com/comments?api_key=' + myKey;
+// 	const getCommentsURL = axios.get(link);
+// 	const getComu = getCommentsURL.data;
+	
+// 	console.log(getComu)
+
+// }
+
+// getComments()
+
+// Attempt 2
+let myKey = "";
+
+
+async function copyKey() {
+	const getKeyURL = await axios.get('https://project-1-api.herokuapp.com/register');
+	const getKey = await getKeyURL.data.api_key 
+	//JSON.stringify(getKeyURL.data.api_key)
+	myKey = myKey + getKey;
+}
+copyKey().catch((error) => {
+	console.log(error);
+});		// promise call - ends here
+console.log(myKey);
+
+async function getComments() {
+	await copyKey();
+	let link = 'https://project-1-api.herokuapp.com/comments?api_key=' + myKey;
+	const getCommentsURL = await axios.get(link);
+	// const getComu = getCommentsURL.data;
+	console.log(getCommentsURL)
+	
+
+}
+getComments().catch((error) => {
+	console.log(error);
+});
+
+
+
+// Complicated Promise
+function fakeAxiosGet() {
+	let count = 0;
+	// This function needs to return a Promise immediately that will be pending 
+	// at first but eventually will either be successful (resolve) or unsuccessful (reject)
+	return new Promise(function (resolve, reject) {
+	   // We define use setInterval to check to see if window.rory is 200
+	   // every 1 second, this will constantly run until we clear our interval
+	   let intervalId = setInterval(() => {
+		  console.log('Checking....', count);
+		  // To see this Promise work in real time try running this code and waiting
+		  // 10 seconds and watch it fail, then try re-running it
+		  // and after 5 seconds type window.rory = 200; into the console and watch
+		  // it will stop executing and say Success!
+		  if (window.rory === 200) {
+			 resolve();
+			 clearInterval(intervalId); // clearInterval ends our infinite loop
+		  } else if (count > 10) {
+			 reject();
+			 clearInterval(intervalId);
+		  }
+		count++;
+	   },1000);
+	});
+ }
+ 
+ 
+ const longPromise = fakeAxiosGet();
+ longPromise
+ .then(() => { 
+	console.log('success!');
+ })
+ .catch(() => {
+	console.log('failure');
+ })
+ 
+ // If you type window.rory = 200  before 10 seconds then this is what the output will look like, if you wait 10 seconds you should see failure.
+ // Give it a shot and a read if you want to understand promises even more!
+ // Screen Shot 2021-12-11 at 6.16.25 PM.png 
+ 
+
+
+
+
+
+
 // 	Step 1 - create an editable Array with 3 default objects
 let commentArray = [{
 	id: "0",
