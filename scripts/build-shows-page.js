@@ -1,27 +1,30 @@
 // All CODES added to Line 43 on shows.html
 
-// get the axios promise
-const getURL = axios.get('https://project-1-api.herokuapp.com')
-// console.log the returned promise
-console.log(getURL)
-// calling the promise with .then and .catch
-getURL
+let getKeyURL = axios.get('https://project-1-api.herokuapp.com/register')
 .then(result => {
-	// 
-	console.log(result)
-	// call whatEver() function created with target Array[result.data.data] as argument
-	whatEver(result.data.data);
-	
-	// Add page numbers
-	let currentPage = document.querySelector(".res__page");
-	let totalPages = document.querySelector(".res__total-pages");
-	currentPage.innerHTML = result.data.page;
-	totalPages.innerHTML = result.data.total_pages;
+	// call whatEver() function created with target Array[result.data.data] as argument	
+	return result.data.api_key;
+		// myKey = myKey + getKey;
+	// console.log(myKey);
 
 	// Add Text info after converting JSON to 'String'
-	let selectAd = document.querySelector(".res__ad");
-	let stringedText = JSON.stringify(result.data.support.text);
-	selectAd.innerHTML = stringedText;
+	// let selectAd = document.querySelector(".res__ad");
+	// let stringedText = JSON.stringify(result.data.support.text);
+	// selectAd.innerHTML = stringedText;
+}) 
+.catch((error) => {
+console.log(error);
+});		// promise call - ends here
+
+let getShowDatesURL = axios.get(`https://project-1-api.herokuapp.com/showdates?api_key=${getKeyURL}`)
+.then(result => {
+	// return JSON.stringify(result.data);
+
+	// var date = JSON.stringify(result.data.date)
+	return result.data
+	
+	// console.log(JSON.stringify({ x: 5, y: 6 }));
+	// expected output: "{"x":5,"y":6}"
 }) 
 .catch((error) => {
 console.log(error);
@@ -29,44 +32,44 @@ console.log(error);
 
 
 // STEP 1 - Create "Arrays of Show Data"
-const showArray = [
-    {
-        "id": 0,
-        "date": "Mon Sept 06 2021",
-        "place": "Ronald Lane",
-        "location": "San Francisco, CA"
-    },
-    {
-        "id": 1,
-        "date": "Tue Sept 21 2021",
-        "place": "Pier 3 East",
-        "location": "San Francisco, CA"
-    },
-    {
-        "id": 2,
-        "date": "Fri Oct 15 2021",
-        "place": "View Lounge",
-        "location": "San Francisco, CA"
-    },
-    {
-        "id": 3,
-        "date": "Sat Nov 06 2021",
-        "place": "Hyatt Agency",
-        "location": "San Francisco, CA"
-    },
-    {
-        "id": 4,
-        "date": "Fri Nov 26 2021",
-        "place": "Moscow Center",
-        "location": "San Francisco, CA"
-    },
-    {
-        "id": 5,
-        "date": "Wed Dec 15 2021",
-        "place": "Press Club",
-        "location": "San Francisco, CA"
-    }
-]
+// const showArray = [
+//     {
+//         "id": 0,
+//         "date": "Mon Sept 06 2021",
+//         "place": "Ronald Lane",
+//         "location": "San Francisco, CA"
+//     },
+//     {
+//         "id": 1,
+//         "date": "Tue Sept 21 2021",
+//         "place": "Pier 3 East",
+//         "location": "San Francisco, CA"
+//     },
+//     {
+//         "id": 2,
+//         "date": "Fri Oct 15 2021",
+//         "place": "View Lounge",
+//         "location": "San Francisco, CA"
+//     },
+//     {
+//         "id": 3,
+//         "date": "Sat Nov 06 2021",
+//         "place": "Hyatt Agency",
+//         "location": "San Francisco, CA"
+//     },
+//     {
+//         "id": 4,
+//         "date": "Fri Nov 26 2021",
+//         "place": "Moscow Center",
+//         "location": "San Francisco, CA"
+//     },
+//     {
+//         "id": 5,
+//         "date": "Wed Dec 15 2021",
+//         "place": "Press Club",
+//         "location": "San Francisco, CA"
+//     }
+// ]
 
 // STEP 2 - Create an Unordered list within a div with class(shows__container)
 // 2A - Create 4 p elements
@@ -103,7 +106,8 @@ div.appendChild(titleDiv)
 div.appendChild(ul);
 
 // 	Step 2 - Create function to display Data from the Array above
-let displayShow = function(){
+let displayShow = async () => {
+	let showArray = await getShowDatesURL;
 	for (i=0; i<showArray.length; i++) {
 		// (I) Add Date & Title
         // A - Create p element, add date title and add class		
@@ -113,7 +117,9 @@ let displayShow = function(){
         titleDate.classList.add('hide__later');
 		// B - Create p element, add date from above Array and add class
 		const showDate = document.createElement('p');
-		showDate.innerText = showArray[i].date;
+		let newTime = new Date(Number(showArray[i].date));
+		newTime = (newTime.getUTCDate()) + '/' + (newTime.getUTCMonth() + 1) + '/' + newTime.getUTCFullYear();
+		showDate.innerText = newTime;
 		showDate.classList.add("show__date");
 		// C - Create Div element, add class	
 		const dateDiv = document.createElement('div');

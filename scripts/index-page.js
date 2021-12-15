@@ -28,112 +28,110 @@
 
 // getComments()
 
-// Attempt 2
-let myKey = "";
+// Attempt 2 - works on console but doesnt output data
+// let commentArray = []
+// let myKey = "";
+// async function copyKey() {
+// 	const getKeyURL = await axios.get('https://project-1-api.herokuapp.com/register');
+// 	const getKey = await getKeyURL.data.api_key;
+// 	myKey = myKey + getKey;
+// }
+// copyKey().catch((error) => {
+// 	console.log(error);
+// });		// promise call - ends here
+// console.log(myKey);
+
+// async function getComments() {
+// 	await copyKey();
+// 	let link = 'https://project-1-api.herokuapp.com/comments?api_key=' + myKey;
+// 	const getCommentsURL = await axios.get(link);
+// 	// const getComu = getCommentsURL.data;
+// 	console.log(getCommentsURL);
+// 	commentArray = getCommentsURL.data;
+
+// }
+// getComments().catch((error) => {
+// 	console.log(error);
+// });
+// console.log(commentArray);
 
 
-async function copyKey() {
-	const getKeyURL = await axios.get('https://project-1-api.herokuapp.com/register');
-	const getKey = await getKeyURL.data.api_key 
-	//JSON.stringify(getKeyURL.data.api_key)
-	myKey = myKey + getKey;
-}
-copyKey().catch((error) => {
-	console.log(error);
-});		// promise call - ends here
-console.log(myKey);
 
-async function getComments() {
-	await copyKey();
-	let link = 'https://project-1-api.herokuapp.com/comments?api_key=' + myKey;
-	const getCommentsURL = await axios.get(link);
-	// const getComu = getCommentsURL.data;
-	console.log(getCommentsURL)
+// let commentArray = [];
+
+// let getKeyURL = axios.get('https://project-1-api.herokuapp.com/register')
+// .then(result => {
 	
+// 	console.log(result.data.api_key);
+// 	// call whatEver() function created with target Array[result.data.data] as argument	
+// 	return result.data.api_key;
+	
+// 	// myKey = myKey + getKey;
+// 	// console.log(myKey);
 
-}
-getComments().catch((error) => {
-	console.log(error);
-});
+// 	// Add Text info after converting JSON to 'String'
+// 	// let selectAd = document.querySelector(".res__ad");
+// 	// let stringedText = JSON.stringify(result.data.support.text);
+// 	// selectAd.innerHTML = stringedText;
+// }) 
+// .catch((error) => {
+// console.log(error);
+// });		// promise call - ends here
 
+let myKey = 'b74217e9-d527-4bc2-90ae-26d03176c467';
 
-
-// Complicated Promise
-function fakeAxiosGet() {
-	let count = 0;
-	// This function needs to return a Promise immediately that will be pending 
-	// at first but eventually will either be successful (resolve) or unsuccessful (reject)
-	return new Promise(function (resolve, reject) {
-	   // We define use setInterval to check to see if window.rory is 200
-	   // every 1 second, this will constantly run until we clear our interval
-	   let intervalId = setInterval(() => {
-		  console.log('Checking....', count);
-		  // To see this Promise work in real time try running this code and waiting
-		  // 10 seconds and watch it fail, then try re-running it
-		  // and after 5 seconds type window.rory = 200; into the console and watch
-		  // it will stop executing and say Success!
-		  if (window.rory === 200) {
-			 resolve();
-			 clearInterval(intervalId); // clearInterval ends our infinite loop
-		  } else if (count > 10) {
-			 reject();
-			 clearInterval(intervalId);
-		  }
-		count++;
-	   },1000);
-	});
- }
- 
- 
- const longPromise = fakeAxiosGet();
- longPromise
- .then(() => { 
-	console.log('success!');
- })
- .catch(() => {
-	console.log('failure');
- })
- 
- // If you type window.rory = 200  before 10 seconds then this is what the output will look like, if you wait 10 seconds you should see failure.
- // Give it a shot and a read if you want to understand promises even more!
- // Screen Shot 2021-12-11 at 6.16.25 PM.png 
- 
+let getCommentsURL = axios.get(`https://project-1-api.herokuapp.com/comments?api_key=${myKey}`)
+.then(result => {
+	// return JSON.stringify(result.data);
+	return result.data
+	// console.log(JSON.stringify({ x: 5, y: 6 }));
+	// expected output: "{"x":5,"y":6}"
+}) 
+.catch((error) => {
+console.log(error);
+});		// promise call - ends here
 
 
 
-
-
+// let postCommentsURL = axios.post(`https://project-1-api.herokuapp.com/comments?api_key=${myKey}`)
 
 // 	Step 1 - create an editable Array with 3 default objects
-let commentArray = [{
-	id: "0",
-	name: "Connor Walton",
-	timeStamp: "02/17/2021",
-	commentText: "This is art. This is inexplicable magic expressed in the purest way, everything that makes up this majestic work deserves reverence. Let us appreciate this for what it is and what it contains."
-},
-{
-	id: "1",
-	name: "Emilie Beach",
-	timeStamp: "01/09/2021",
-	commentText: "I feel blessed to have seen them in person. What a show! They were just perfection. If there was one day of my life I could relive, this would be it. What an incredible day."
-},
-{
-	id: "2",
-	name: "Miles Acosta",
-	timeStamp: "12/20/2020",
-	commentText: "I can't stop listening. Every time I hear one of their songs - the vocals - it gives me goosebumps. Shivers straight down my spine. What a beautiful expression of creativity. Can't get enough."
-}];
+// let commentArray = [{
+// 	id: "0",
+// 	likes: 0,
+// 	name: "Connor Walton",
+// 	timestamp: "02/17/2021",
+// 	comment: "This is art. This is inexplicable magic expressed in the purest way, everything that makes up this majestic work deserves reverence. Let us appreciate this for what it is and what it contains."
+// },
+// {
+// 	id: "1",
+// 	likes: 0,
+// 	name: "Emilie Beach",
+// 	timestamp: "01/09/2021",
+// 	comment: "I feel blessed to have seen them in person. What a show! They were just perfection. If there was one day of my life I could relive, this would be it. What an incredible day."
+// },
+// {
+// 	id: "2",
+// 	likes: 0,
+// 	name: "Miles Acosta",
+// 	timestamp: "12/20/2020",
+// 	comment: "I can't stop listening. Every time I hear one of their songs - the vocals - it gives me goosebumps. Shivers straight down my spine. What a beautiful expression of creativity. Can't get enough."
+// }];
 
 // 	Step 2 - Create function to display Data from the Array above
-let displayComment = function(){
+let displayComment = async () => {
+	let commentArray = await getCommentsURL;
 	for (i=0; i<commentArray.length; i++) {
+		
 		// A - Create p element, add name from above Array and add class		
 		const nameTag = document.createElement('p');
 		nameTag.innerText = commentArray[i].name;
 		nameTag.classList.add("section__form-name");
 		// B - Create p element, add timeStamp from above Array and add class
 		const timeStampTag = document.createElement('p');
-		timeStampTag.innerText = commentArray[i].timeStamp;
+		let newTime = new Date(commentArray[i].timestamp);
+		newTime = (newTime.getDate()) + '/' + (newTime.getMonth() + 1) + '/' + newTime.getFullYear();
+		timeStampTag.innerText = newTime;
 		timeStampTag.classList.add("section__form-timeStamp");
 		// C - Create INNER div element, add class	
 		const innerDiv = document.createElement('div');
@@ -143,7 +141,7 @@ let displayComment = function(){
 		innerDiv.appendChild(timeStampTag);
 		// E - Create p element, add commentText from above Array and add class
 		const commentTextTag = document.createElement('p');
-		commentTextTag.innerText = commentArray[i].commentText;
+		commentTextTag.innerText = commentArray[i].comment;
 		commentTextTag.classList.add("section__form-commentText");
 		// F - Create OUTER div element, add class
 		const outerDiv = document.createElement('div');
@@ -163,7 +161,7 @@ let displayComment = function(){
 		mainDiv.appendChild(outerDiv);
 		// K - Select parent element [div.shows__list] AND Append J to it
 		const commentSection = document.querySelector(".section__comment");
-		commentSection.appendChild(mainDiv);
+		commentSection.prepend(mainDiv);
 	}
 }
 
@@ -175,7 +173,9 @@ displayComment()
 const submitButton = document.querySelector("#myButton");
 const sectionMain = document.querySelector(".section__form");
 //	B
-submitButton.addEventListener('click', (event) => {
+submitButton.addEventListener('click', async (event) => {
+	let commentArray = await getCommentsURL;
+
     // 	I. 	Prevent refreshing the page
 	event.preventDefault()
 	// 	II. Collect value from input element
@@ -190,26 +190,23 @@ submitButton.addEventListener('click', (event) => {
 		const commentTag = document.querySelector("#comment");
         commentTag.classList.add('error');
 		commentTag.removeAttribute("placeholder");
+		alert("400 Bad Request : Complete all required fields to proceed")
         return;
     }
 	// 	IV. Clear input fields
 	let clearAll = document.querySelector(".section__comment");
 	clearAll.innerHTML = "";
 	// 	V. Add Funtion for timestamp
-	function getTimeStamp() {
-		var now = new Date();
-		return ((now.getMonth() + 1) + '/' + (now.getDate()) + '/' + now.getFullYear());
- 	}
+	// function getTimeStamp() {
+	// 	var now = new Date();
+	// 	return ( (now.getDate()) + '/' + (now.getMonth() + 1) + '/' + now.getFullYear());
+ 	// }
 	//  VI. Create a new OBJECT to collect INPUT VALUE from FORM INPUT fields and a Time Funtion
-	let newObject = { id: "", name: "", timeStamp: "", commentText: "" }
-	newObject.id = 1000 + commentArray.length;	
-	newObject.name = nameValue;
-	newObject.timeStamp = getTimeStamp();
-	newObject.commentText = commentValue; 
+
 	//  VII. Add the created OBJECT[VI] to initial ARRAY[STEP 1]
-	commentArray.unshift(newObject);
+
 	// 	VIII. Call the created funtion[line 60] again - DUE TO CLICK EVENT
-	displayComment()
+
     // 	IX. On Successful Submission, Remove Error Visual and Clear Input Fields
 	const nameTag = document.querySelector("#name");
 	const commentTag = document.querySelector("#comment");
@@ -221,4 +218,38 @@ submitButton.addEventListener('click', (event) => {
 	// 	b. Clear Input Fields
 	nameTag.value = "";
 	commentTag.value = "";
+
+
+	axios.post(`https://project-1-api.herokuapp.com/comments?api_key=${myKey}`, {name: nameValue, comment: commentValue})
+	.then(function (response) {
+		let newObject = { id: response.data.id, name: response.data.name, timestamp: response.data.timestamp, comment: response.data.comment }
+		// newObject.id = new Date().getTime();	
+		// newObject.name = nameValue;
+		// newObject.timestamp = new Date().getTime();
+		// newObject.comment = commentValue;
+		commentArray.push(newObject);
+		displayComment()
+	})
+	.catch(function (error) { 
+		console.log(error);
+	});
+
+
 })
+
+// https://postman-echo.com/post
+
+
+
+
+
+// let postCommentsURL = axios.post(`https://project-1-api.herokuapp.com/comments?api_key=${myKey}`)
+// .then(result => {
+// 	// return JSON.stringify(result.data);
+// 	return result.data
+// 	// console.log(JSON.stringify({ x: 5, y: 6 }));
+// 	// expected output: "{"x":5,"y":6}"
+// }) 
+// .catch((error) => {
+// console.log(error);
+// });		// promise call - ends here
