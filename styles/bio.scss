@@ -298,7 +298,6 @@ input[class=error], textarea[class=error] {
         padding-left: 24px;      
         width: 100%;
     }
-
 }
 .section__form-innerDiv {
     display:flex;
@@ -314,4 +313,21 @@ input[class=error], textarea[class=error] {
 .section__form-timeStamp {
     color: variables.$colorSilver;
     font-weight: bold;
+}
+.section__form-innerDiv--bottom {
+    display:flex;
+    justify-content: space-between;
+}
+.section__form-likeDiv {
+    display:flex;
+
+}
+.fa {
+    font-size: 20px;
+    cursor: pointer;
+    user-select: none;
+    padding-right: 5px;
+}  
+.fa:hover {
+color: grey;
 }
