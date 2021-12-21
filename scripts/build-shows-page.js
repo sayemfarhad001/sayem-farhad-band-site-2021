@@ -1,77 +1,16 @@
-// All CODES added to Line 43 on shows.html
+// ASSIGN API KEY
+let myKey = 'b74217e9-d527-4bc2-90ae-26d03176c467';
 
-let getKeyURL = axios.get('https://project-1-api.herokuapp.com/register')
+// PROMISE FROM API [GET AXIOS]
+let getShowDatesURL = axios.get(`https://project-1-api.herokuapp.com/showdates?api_key=${myKey}`)
 .then(result => {
-	// call whatEver() function created with target Array[result.data.data] as argument	
-	return result.data.api_key;
-		// myKey = myKey + getKey;
-	// console.log(myKey);
-
-	// Add Text info after converting JSON to 'String'
-	// let selectAd = document.querySelector(".res__ad");
-	// let stringedText = JSON.stringify(result.data.support.text);
-	// selectAd.innerHTML = stringedText;
-}) 
-.catch((error) => {
-console.log(error);
-});		// promise call - ends here
-
-let getShowDatesURL = axios.get(`https://project-1-api.herokuapp.com/showdates?api_key=${getKeyURL}`)
-.then(result => {
-	// return JSON.stringify(result.data);
-
-	// var date = JSON.stringify(result.data.date)
 	return result.data
-	
-	// console.log(JSON.stringify({ x: 5, y: 6 }));
-	// expected output: "{"x":5,"y":6}"
 }) 
 .catch((error) => {
 console.log(error);
-});		// promise call - ends here
+});	
 
-
-// STEP 1 - Create "Arrays of Show Data"
-// const showArray = [
-//     {
-//         "id": 0,
-//         "date": "Mon Sept 06 2021",
-//         "place": "Ronald Lane",
-//         "location": "San Francisco, CA"
-//     },
-//     {
-//         "id": 1,
-//         "date": "Tue Sept 21 2021",
-//         "place": "Pier 3 East",
-//         "location": "San Francisco, CA"
-//     },
-//     {
-//         "id": 2,
-//         "date": "Fri Oct 15 2021",
-//         "place": "View Lounge",
-//         "location": "San Francisco, CA"
-//     },
-//     {
-//         "id": 3,
-//         "date": "Sat Nov 06 2021",
-//         "place": "Hyatt Agency",
-//         "location": "San Francisco, CA"
-//     },
-//     {
-//         "id": 4,
-//         "date": "Fri Nov 26 2021",
-//         "place": "Moscow Center",
-//         "location": "San Francisco, CA"
-//     },
-//     {
-//         "id": 5,
-//         "date": "Wed Dec 15 2021",
-//         "place": "Press Club",
-//         "location": "San Francisco, CA"
-//     }
-// ]
-
-// STEP 2 - Create an Unordered list within a div with class(shows__container)
+// STEP 2 - SETUP THE DOM STRUCTURE
 // 2A - Create 4 p elements
 let desktopDateTitle = document.createElement('p');
 desktopDateTitle.classList.add("show__title__date")
@@ -105,7 +44,7 @@ let div = document.querySelector(".shows__container");
 div.appendChild(titleDiv)
 div.appendChild(ul);
 
-// 	Step 2 - Create function to display Data from the Array above
+// 	Step 2 - DISPLAY DATA FROM API ON BROWSER
 let displayShow = async () => {
 	let showArray = await getShowDatesURL;
 	for (i=0; i<showArray.length; i++) {
@@ -118,7 +57,7 @@ let displayShow = async () => {
 		// B - Create p element, add date from above Array and add class
 		const showDate = document.createElement('p');
 		let newTime = new Date(Number(showArray[i].date));
-		newTime = (newTime.getUTCDate()) + '/' + (newTime.getUTCMonth() + 1) + '/' + newTime.getUTCFullYear();
+		newTime = (`0${newTime.getUTCDate()}`.slice(-2)) + '/' + (`0${newTime.getUTCMonth() + 1}`.slice(-2)) + '/' + newTime.getUTCFullYear();
 		showDate.innerText = newTime;
 		showDate.classList.add("show__date");
 		// C - Create Div element, add class	
@@ -133,7 +72,7 @@ let displayShow = async () => {
 		mainList.setAttribute("id", showArray[i].id);
 		// F - Append Div element(C) to created List element(E)			
 		mainList.appendChild(dateDiv);
-
+		
         // (II)	Add Venue & Title
         // A - Create p element, add venue title and add class		
 		const titleVenue = document.createElement('p');
@@ -192,6 +131,4 @@ let displayShow = async () => {
 		showsList.appendChild(mainList);
 	}
 }
-
-// 	Step 3 - Call the created funtion - before any event
 displayShow()

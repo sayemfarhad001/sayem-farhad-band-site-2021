@@ -1,16 +1,16 @@
-// Assigned API Key to global variable
+// ASSIGN API KEY
 let myKey = 'b74217e9-d527-4bc2-90ae-26d03176c467';
 
-// Request the Comments Array from API
+// PROMISE FROM API [GET AXIOS]
 let getCommentsURL = axios.get(`https://project-1-api.herokuapp.com/comments?api_key=${myKey}`)
 .then(result => {
-	return result.data
+	return sortComments(result.data)
 })
 .catch((error) => {
 console.log(error);
 });
 
-// 	Step 2 - Create function to display Data from the Array above
+// 	Step 2 - DISPLAY DATA FROM API ON BROWSER
 let displayComment = async () => {
 	let commentArray = await getCommentsURL;
 	for (i=0; i<commentArray.length; i++) {		
@@ -30,30 +30,26 @@ let displayComment = async () => {
 		// D - Append [A and B] to created INNER div element(C)
 		innerDiv.appendChild(nameTag);
 		innerDiv.appendChild(timeStampTag);
-		// E - Create p element, add commentText from above Array and add class
+		// E1 - Create p element, add commentText from above Array and add class
 		const commentTextTag = document.createElement('p');
 		commentTextTag.innerText = commentArray[i].comment;
 		commentTextTag.classList.add("section__form-commentText");
-		// div - like and delete		
+		// E2 - Add Like and Delete Buttons		
 		const likeButton = document.createElement('p');
 		likeButton.classList.add("like__button", "fa", "fa-thumbs-up");
 		likeButton.setAttribute("id", commentArray[i].id);
-
 		const likeCount = document.createElement('p');
 		likeCount.innerText = commentArray[i].likes;
 		likeCount.classList.add("like__count");
-
 		const likeDiv = document.createElement('div');
 		likeDiv.classList.add("section__form-likeDiv");
 		likeDiv.appendChild(likeButton);
 		likeDiv.appendChild(likeCount);
-
 		const deleteButton = document.createElement('p');
 		deleteButton.classList.add("delete__button", "fa", "fa-trash");
 		deleteButton.setAttribute("id", commentArray[i].id);
 		const innerDivBottom = document.createElement('div');
 		innerDivBottom.classList.add("section__form-innerDiv--bottom");
-
 		innerDivBottom.appendChild(likeDiv);
 		innerDivBottom.appendChild(deleteButton);
 		// F - Create OUTER div element, add class
@@ -80,13 +76,13 @@ let displayComment = async () => {
 }
 displayComment()
 
-// 	Step 4 - Create an event for Clicking COMMENT Button
+// 	Step 4 - EVENT LISTENER ON FORM SUBMISSION
 // 	A - Select BUTTON element AND FORM element
 const submitButton = document.querySelector("#myButton");
 const sectionMain = document.querySelector(".section__form");
-//	B
+//	B - Add Event Listener
 submitButton.addEventListener('click', async (event) => {
-	let commentArray = await getCommentsURL;
+	await getCommentsURL;
     // 	I. 	Prevent refreshing the page
 	event.preventDefault()
 	// 	II. Collect value from input element
@@ -94,7 +90,7 @@ submitButton.addEventListener('click', async (event) => {
     const commentValue = document.querySelector("#comment").value;
     // 	III. Validate: ensure length is present
     if (nameValue.length < 1 || commentValue.length < 1) {
-        //DOM Manipulation to add Visual error border
+        //Add Visual error border and alert message
         const nameTag = document.querySelector("#name");
         nameTag.classList.add('error');
 		nameTag.removeAttribute("placeholder");
@@ -121,8 +117,6 @@ submitButton.addEventListener('click', async (event) => {
 	// 	VI.	Post request to the API 
 	axios.post(`https://project-1-api.herokuapp.com/comments?api_key=${myKey}`, {name: nameValue, comment: commentValue})
 	.then(function (response) {
-		// let newObject = { id: response.data.id, likes: response.data.likes, name: response.data.name, timestamp: response.data.timestamp, comment: response.data.comment }
-		// commentArray.push(newObject);
 		location.reload()
 		displayComment()
 	})
@@ -131,57 +125,29 @@ submitButton.addEventListener('click', async (event) => {
 	});
 })
 
-// // clickLike on line 37
+// LIKE FUNCTION [PUT AXIOS]
+async function addLikeEvent() {
+	let commentArray = await getCommentsURL;
+	const clickLike = document.querySelectorAll(".like__button")
+	if (commentArray){
+		for (var i = 0; i < clickLike.length; i++) {
+			let id = clickLike[i].getAttribute("id");
+			clickLike[i].addEventListener('click', (event) => {				
+				event.preventDefault();
+				axios.put(`https://project-1-api.herokuapp.com/comments/${id}/like?api_key=${myKey}`)
+				.then((response) => {					
+					location.reload()
+				}) 
+				.catch((error) => { 
+					console.log(error)
+				})
+			}); 
+		}
+	}
+}
+addLikeEvent()
 
-// const addCount = document.querySelector(".like__count"); 
-
-// let like = 
-// increaseLike = (like) => {
-// 	like ++
-// 	addCount.innerHTML = `${like}`;
-// }
-// likeClick = (like) => {
-// 	increaseLike(like)
-// }
-
-// // // "id", commentArray[i].id
-
-// let clickLike = document.querySelector(".like__button");
-// clickLike.addEventListener('click', async (event) => {
-// 	await getCommentsURL;
-// 	event.stopPropagation();
-// 	const count = document.querySelector(".like__count");
-// 	let currentLikes = count.innerText;
-
-// 	let id = clickLike.getAttribute("id");
-// 	let putURL = axios.put(`https://project-1-api.herokuapp.com/comments/${id}/like?api_key=${myKey}`, {"likes" : currentLikes++ })
-// 	putURL.then(function () {	
-// 		// likeClick(response.data.likes)
-// 		displayComment()
-// 	})
-// 	.catch(function (error) { 
-// 		console.log(error);
-// 	})
-// })
-
-
-
-
-
-
-
-
-
-
-
-// clickLike on line 41
-// Delete post using async/await
-
-// const clickDelete = document.querySelectorAll(".delete__button");
-// const selectComment = document.querySelectorAll(".section__form-mainDiv");
-// const getCommentId = selectComment.getAttribute(".section__form-mainDiv");
-
-// "id", commentArray[i].id
+// DELETE FUNCTION [DELETE AXIOS]
 async function addDeleteEvent() {
 	let commentArray = await getCommentsURL;
 	const clickDelete = document.querySelectorAll(".delete__button")
@@ -194,31 +160,20 @@ async function addDeleteEvent() {
 					axios.delete(`https://project-1-api.herokuapp.com/comments/${id}?api_key=${myKey}`)
 					.then((response) => {
 						location.reload()
-						// displayComment()						
 					}) 
 					.catch((error) => { 
 						console.log(error)
 					})
 				}
-
-				// displayComment()
 			}); 
 		}
-
 	}
 }
-
 addDeleteEvent()
-// .then (()=>{
 
-// 	addDeleteEvent();
-// })
-			// window.confirm("Are you sure you want to delete this post?")
-		// function deleteComment() {
-		// 	let res = axios.delete(`https://project-1-api.herokuapp.com/comments/${id}?api_key=${myKey}`);
-		// 	if (commentArray.data.id === getCommentId) {
-		// 		commentArray[i].remove();
-		// 	}	
-		// 	console.log(res.status);
-		// }
-		// deleteComment();
+//SORT FUNCTION
+function sortComments(posts){
+    return posts.sort( (a,b) => {
+        return a.timestamp - b.timestamp;
+    })
+}
