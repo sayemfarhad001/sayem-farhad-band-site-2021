@@ -56,8 +56,7 @@ let displayShow = async () => {
         titleDate.classList.add('hide__later');
 		// B - Create p element, add date from above Array and add class
 		const showDate = document.createElement('p');
-		let newTime = new Date(Number(showArray[i].date));
-		newTime = (`0${newTime.getUTCDate()}`.slice(-2)) + '/' + (`0${newTime.getUTCMonth() + 1}`.slice(-2)) + '/' + newTime.getUTCFullYear();
+		let newTime = formatDate(Number(showArray[i].date))
 		showDate.innerText = newTime;
 		showDate.classList.add("show__date");
 		// C - Create Div element, add class	
@@ -132,3 +131,15 @@ let displayShow = async () => {
 	}
 }
 displayShow()
+
+// FORMAT SHOW DATE
+function formatDate(dateString){
+    let dateIn = new Date(Number(dateString));
+    let months = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+    let days = ["Sun","Mon","Tue","Wed","Thu","Fri","Sat"];
+    let year = dateIn.getUTCFullYear();
+    let month = months[dateIn.getUTCMonth()];
+    let day = days[dateIn.getUTCDay()];
+    let date = `0${dateIn.getUTCDate()}`.slice(-2);
+    return `${day} ${month} ${date} ${year}`;
+}

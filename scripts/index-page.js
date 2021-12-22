@@ -118,7 +118,6 @@ submitButton.addEventListener('click', async (event) => {
 	axios.post(`https://project-1-api.herokuapp.com/comments?api_key=${myKey}`, {name: nameValue, comment: commentValue})
 	.then(function (response) {
 		location.reload()
-		displayComment()
 	})
 	.catch(function (error) { 
 		console.log(error);
@@ -133,10 +132,9 @@ async function addLikeEvent() {
 		for (var i = 0; i < clickLike.length; i++) {
 			let id = clickLike[i].getAttribute("id");
 			clickLike[i].addEventListener('click', (event) => {				
-				event.preventDefault();
 				axios.put(`https://project-1-api.herokuapp.com/comments/${id}/like?api_key=${myKey}`)
 				.then((response) => {					
-					location.reload()
+					document.location.reload()
 				}) 
 				.catch((error) => { 
 					console.log(error)
@@ -156,7 +154,6 @@ async function addDeleteEvent() {
 			let id = clickDelete[i].getAttribute("id");
 			clickDelete[i].addEventListener('click', (event) => {
 				if (window.confirm("Are you sure you want to delete this post?")) {
-					event.preventDefault();
 					axios.delete(`https://project-1-api.herokuapp.com/comments/${id}?api_key=${myKey}`)
 					.then((response) => {
 						location.reload()
